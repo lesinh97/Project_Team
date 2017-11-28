@@ -52,6 +52,7 @@
             this.materialFlatButton2.TabIndex = 23;
             this.materialFlatButton2.Text = "Quit";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
             // 
             // RegisterBut
             // 
@@ -67,6 +68,7 @@
             this.RegisterBut.TabIndex = 22;
             this.RegisterBut.Text = "Register";
             this.RegisterBut.UseVisualStyleBackColor = true;
+            this.RegisterBut.Click += new System.EventHandler(this.RegisterBut_Click);
             // 
             // okBUT
             // 
@@ -82,7 +84,7 @@
             this.okBUT.TabIndex = 21;
             this.okBUT.Text = "OK";
             this.okBUT.UseVisualStyleBackColor = true;
-            this.okBUT.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            this.okBUT.Click += new System.EventHandler(this.okBUT_Click);
             // 
             // materialSingleLineTextField2
             // 
@@ -98,6 +100,7 @@
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(290, 23);
             this.materialSingleLineTextField2.TabIndex = 20;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.materialSingleLineTextField2.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
             // 
             // materialSingleLineTextField1
             // 
@@ -113,6 +116,7 @@
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(290, 23);
             this.materialSingleLineTextField1.TabIndex = 19;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.materialSingleLineTextField1.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // materialLabel3
             // 
@@ -127,6 +131,7 @@
             this.materialLabel3.Size = new System.Drawing.Size(141, 19);
             this.materialLabel3.TabIndex = 18;
             this.materialLabel3.Text = "Đăng nhập hệ thống";
+            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
             // 
             // materialLabel2
             // 
@@ -142,6 +147,7 @@
             this.materialLabel2.TabIndex = 17;
             this.materialLabel2.Text = "Password";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // materialLabel1
             // 
@@ -157,6 +163,7 @@
             this.materialLabel1.TabIndex = 16;
             this.materialLabel1.Text = "ID";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // Login
             // 

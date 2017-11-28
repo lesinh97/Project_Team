@@ -13,7 +13,7 @@ namespace Project_Team.View
 {
     public partial class Login : MaterialSkin.Controls.MaterialForm
     {
-        public Manager db;
+        public Manager db { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -27,7 +27,43 @@ namespace Project_Team.View
             db = new Manager();
         }
 
-        private void materialFlatButton1_Click(object sender, EventArgs e)
+        private void RegisterBut_Click(object sender, EventArgs e)
+        {
+            addUserForm addUserForm = new addUserForm();
+            addUserForm.Show();
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialSingleLineTextField2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialSingleLineTextField1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void okBUT_Click(object sender, EventArgs e)
         {
 
         }
