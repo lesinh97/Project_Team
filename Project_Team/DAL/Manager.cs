@@ -15,6 +15,7 @@
         public Manager()
             : base("name=Manager")
         {
+            Database.SetInitializer<Manager>(new Initializer());
         }
         public virtual DbSet<Alumnus> sv { get; set; }
         public virtual DbSet<Classes> cl { get; set; }
@@ -23,12 +24,12 @@
         public virtual DbSet<Major> khoa { get; set; }
         public virtual DbSet<Users> user { get; set; }
 
-        public class InIt : CreateDatabaseIfNotExists<Manager>
+        public class Initializer : CreateDatabaseIfNotExists<Manager>
         {
             protected override void Seed(Manager context)
             {
-                context.khoa.Add(new Major { Major_ID = 1, Major_name = "Công nghệ thông tin" });
-                context.khoa.Add(new Major { Major_ID = 1, Major_name = "Hóa" });
+                context.khoa.Add(new Major { Major_ID = 1, Major_name = "CNTT" });
+                context.khoa.Add(new Major { Major_ID = 1, Major_name = "Chemical" });
                 context.cl.Add(new Classes { Class_ID = 1, Class_name = "15TCLC2", Major_ID = 1 });
                 context.cl.Add(new Classes { Class_ID = 2, Class_name = "15SHH", Major_ID = 2 });
                 context.gv.Add(new Lecturers { Lecturers_ID = 1, Lecturer_name = "ABC", Major_ID = 1 });
@@ -57,7 +58,7 @@
                 });
                 context.user.Add(new Users { ID = 1235, Pass = "abc" });
                 context.SaveChanges();
-
+                
             }
         }
 
