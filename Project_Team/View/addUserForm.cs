@@ -13,6 +13,7 @@ namespace Project_Team.View
 {
     public partial class addUserForm : MaterialSkin.Controls.MaterialForm
     {
+        public Manager db { get; set; }
         public addUserForm()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Project_Team.View
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            db = new Manager();
         }
     }
 }

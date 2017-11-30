@@ -13,7 +13,7 @@ namespace Project_Team.View
 {
     public partial class Login : MaterialSkin.Controls.MaterialForm
     {
-        public Manager db { get; set; }
+        public Manager db;
         public Login()
         {
             InitializeComponent();
@@ -24,7 +24,8 @@ namespace Project_Team.View
                 Primary.Blue400, Primary.Blue500,
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
-            db = new Manager();
+                db = new Manager();
+
         }
 
         private void RegisterBut_Click(object sender, EventArgs e)

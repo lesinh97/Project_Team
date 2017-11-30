@@ -15,6 +15,7 @@
         public Manager()
             : base("name=Manager")
         {
+            Database.SetInitializer<Manager>(new Initializer());
         }
         public virtual DbSet<Alumnus> sv { get; set; }
         public virtual DbSet<Classes> cl { get; set; }
@@ -23,7 +24,7 @@
         public virtual DbSet<Major> khoa { get; set; }
         public virtual DbSet<Users> user { get; set; }
 
-        public class InIt : CreateDatabaseIfNotExists<Manager>
+        public class Initializer : CreateDatabaseIfNotExists<Manager>
         {
             protected override void Seed(Manager context)
             {
@@ -57,7 +58,7 @@
                 });
                 context.user.Add(new Users { ID = 1235, Pass = "abc" });
                 context.SaveChanges();
-
+                
             }
         }
 
