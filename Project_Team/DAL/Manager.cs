@@ -1,4 +1,6 @@
-﻿namespace Project_Team
+﻿using System.Diagnostics;
+
+namespace Project_Team
 {
     using System;
     using System.Data.Entity;
@@ -15,47 +17,27 @@
         public Manager()
             : base("name=Manager")
         {
+            Database.SetInitializer<Manager>(new Initializer());
         }
-        public virtual DbSet<Alumnus> sv { get; set; }
-        public virtual DbSet<Classes> cl { get; set; }
-        public virtual DbSet<Lecture> mh { get; set; }
-        public virtual DbSet<Lecturers> gv { get; set; }
-        public virtual DbSet<Major> khoa { get; set; }
-        public virtual DbSet<Users> user { get; set; }
+        public virtual DbSet<SinhVien> SinhViens { get; set; }
+        public virtual DbSet<Khoa> Khoas { get; set; }
+        public virtual DbSet<ChuNhiem> ChuNhiems { get; set; }
+        public virtual DbSet<Lop> Lops { get; set; }
+        public virtual DbSet<MonHoc> MonHocs { get; set; }
+        public virtual DbSet<KetQua> KetQuas { get; set; }
+        public virtual DbSet<Users> Userses { get; set; }
 
-        public class InIt : CreateDatabaseIfNotExists<Manager>
+        public class Initializer : CreateDatabaseIfNotExists<Manager>
         {
             protected override void Seed(Manager context)
             {
-                context.khoa.Add(new Major { Major_ID = 1, Major_name = "Công nghệ thông tin" });
-                context.khoa.Add(new Major { Major_ID = 1, Major_name = "Hóa" });
-                context.cl.Add(new Classes { Class_ID = 1, Class_name = "15TCLC2", Major_ID = 1 });
-                context.cl.Add(new Classes { Class_ID = 2, Class_name = "15SHH", Major_ID = 2 });
-                context.gv.Add(new Lecturers { Lecturers_ID = 1, Lecturer_name = "ABC", Major_ID = 1 });
-                context.gv.Add(new Lecturers { Lecturers_ID = 2, Lecturer_name = "XYZ", Major_ID = 2 });
-                context.sv.Add(new Alumnus
-                {
-                    Student_ID = 1,
-                    Name = "A",
-                    Birthday = DateTime.Parse("05-06-1996"),
-                    Gender = false,
-                    Hometown = "Danang",
-                    Class_ID = 2,
-                    Year_Grad = "2020"
-                });
-                context.mh.Add(new Lecture
-                {
-                    Lecture_ID = 1,
-                    Lecturers_ID = 1,
-                    Credits = 2,
-                    Lecture_name = "C",
-                    Student_ID = 1,
-                    Avg_mark = 2,
-                    End_mark = 4,
-                    Exe_mark = 6,
-                    Mid_mark = 6
-                });
-                context.user.Add(new Users { ID = 1235, Pass = "abc" });
+                context.Khoas.Add(new Khoa {MaKhoa = "CNTT", TenKhoa = "Công nghệ thông tin"});
+                context.ChuNhiems.Add(new ChuNhiem {MaGiaoVien = "CNTT_GV_1", TenGiaoVien = "Fuk"});
+                context.Lops.Add(new Lop {MaLop = "CNTT1", TenLop = "15TCLC2", MaKhoa = "CNTT", MaGiaoVien = "CNTT_GV_1"});
+                context.MonHocs.Add(new MonHoc {MaMonHoc = "MH001", TenMonHoc = "BOT Cai Lậy", TinChi = 30});
+                context.SinhViens.Add(new SinhVien {MaSinhVien = 1, TenSinhVien = "Cai Lậy", MaLop = "CNTT1"});
+                context.KetQuas.Add(new KetQua {MaSinhVien = 1, MaMonHoc = "MH001"});
+                context.Userses.Add(new Users {ID = 1, Pass = "abc123"});
                 context.SaveChanges();
 
             }
