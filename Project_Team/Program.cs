@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project_Team.View;
 
 namespace Project_Team
 {
@@ -17,7 +16,7 @@ namespace Project_Team
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VIew());;
+            Application.Run(new Login());;
         }
     }
 }
