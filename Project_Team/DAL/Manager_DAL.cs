@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_Team
 {
@@ -15,10 +16,21 @@ namespace Project_Team
             db = new Manager();
         }
 
-        public void Add_User_DAL(Users us)
+        public bool Add_User_DAL(Users us)
         {
-            db.Userses.Add(us);
-            db.SaveChanges();
+            var s = db.Userses.Where(p => p.ID == us.ID).Select(p => p);
+            if (s.Any())
+            {
+                MessageBox.Show("Đã có user này tồn tại");
+                return false;
+            }
+            else
+            {
+                db.Userses.Add(us);
+                db.SaveChanges();
+                return true;
+            }
+            
         }
 
         public bool DangNhap_DAL(int id, string Pass)

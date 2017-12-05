@@ -16,15 +16,15 @@ namespace Project_Team
         public string MaLop { get; set; }
         [Required]
         public string TenSinhVien { get; set; }
-        //[Required]
-        //public string QueQuan { get; set; }
-        //[Required]
-        //public DateTime NgaySinh { get; set; }
-        //[Required]
-        //public bool GioiTinh { get; set; }
-        //public double DiemTrungBinh { get; set; }
-        //public int DiemRenLuyen { get; set; }
-        //public string Image { get; set; }
+        [Required]
+        public string QueQuan { get; set; }
+        [Required]
+        public DateTime NgaySinh { get; set; }
+        [Required]
+        public bool GioiTinh { get; set; }
+        public Nullable<double> DiemTrungBinh { get; set; }
+        public Nullable<int> DiemRenLuyen { get; set; }
+        public string Image { get; set; }
         [ForeignKey("MaLop")]
         public virtual Lop lops { get; set; }
 
