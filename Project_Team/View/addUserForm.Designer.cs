@@ -1,4 +1,4 @@
-﻿namespace Project_Team.View
+﻿namespace Project_Team
 {
     partial class addUserForm
     {

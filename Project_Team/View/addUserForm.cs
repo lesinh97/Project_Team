@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 
-namespace Project_Team.View
+namespace Project_Team
 {
     public partial class addUserForm : MaterialSkin.Controls.MaterialForm
     {
@@ -34,7 +34,7 @@ namespace Project_Team.View
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            db = new Manager();
+           
         }
     }
 }

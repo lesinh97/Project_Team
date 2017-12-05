@@ -1,4 +1,4 @@
-﻿namespace Project_Team.View
+﻿namespace Project_Team
 {
     partial class Login
     {
@@ -31,8 +31,8 @@
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.RegisterBut = new MaterialSkin.Controls.MaterialFlatButton();
             this.okBUT = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.PassLogin = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.LoginID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -86,37 +86,37 @@
             this.okBUT.UseVisualStyleBackColor = true;
             this.okBUT.Click += new System.EventHandler(this.okBUT_Click);
             // 
-            // materialSingleLineTextField2
+            // PassLogin
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(168, 186);
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '♥';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(290, 23);
-            this.materialSingleLineTextField2.TabIndex = 20;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
-            this.materialSingleLineTextField2.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
+            this.PassLogin.Depth = 0;
+            this.PassLogin.Hint = "";
+            this.PassLogin.Location = new System.Drawing.Point(168, 186);
+            this.PassLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PassLogin.Name = "PassLogin";
+            this.PassLogin.PasswordChar = '♥';
+            this.PassLogin.SelectedText = "";
+            this.PassLogin.SelectionLength = 0;
+            this.PassLogin.SelectionStart = 0;
+            this.PassLogin.Size = new System.Drawing.Size(290, 23);
+            this.PassLogin.TabIndex = 20;
+            this.PassLogin.UseSystemPasswordChar = false;
+            this.PassLogin.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
             // 
-            // materialSingleLineTextField1
+            // LoginID
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(168, 125);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(290, 23);
-            this.materialSingleLineTextField1.TabIndex = 19;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            this.materialSingleLineTextField1.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
+            this.LoginID.Depth = 0;
+            this.LoginID.Hint = "";
+            this.LoginID.Location = new System.Drawing.Point(168, 125);
+            this.LoginID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LoginID.Name = "LoginID";
+            this.LoginID.PasswordChar = '\0';
+            this.LoginID.SelectedText = "";
+            this.LoginID.SelectionLength = 0;
+            this.LoginID.SelectionStart = 0;
+            this.LoginID.Size = new System.Drawing.Size(290, 23);
+            this.LoginID.TabIndex = 19;
+            this.LoginID.UseSystemPasswordChar = false;
+            this.LoginID.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // materialLabel3
             // 
@@ -173,8 +173,8 @@
             this.Controls.Add(this.materialFlatButton2);
             this.Controls.Add(this.RegisterBut);
             this.Controls.Add(this.okBUT);
-            this.Controls.Add(this.materialSingleLineTextField2);
-            this.Controls.Add(this.materialSingleLineTextField1);
+            this.Controls.Add(this.PassLogin);
+            this.Controls.Add(this.LoginID);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -190,8 +190,8 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
         private MaterialSkin.Controls.MaterialFlatButton RegisterBut;
         private MaterialSkin.Controls.MaterialFlatButton okBUT;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField PassLogin;
+        private MaterialSkin.Controls.MaterialSingleLineTextField LoginID;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
