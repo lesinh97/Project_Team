@@ -13,6 +13,7 @@ namespace Project_Team
 {
     public partial class Login : MaterialSkin.Controls.MaterialForm
     {
+        public Manager_BLL BLL;
         public Login()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace Project_Team
                 Primary.Blue400, Primary.Blue500,
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
+            BLL = new Manager_BLL();
         }
 
         private void RegisterBut_Click(object sender, EventArgs e)
@@ -30,42 +32,25 @@ namespace Project_Team
             addUserForm addUserForm = new addUserForm();
             addUserForm.Show();
         }
-
-        private void materialFlatButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialSingleLineTextField2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialSingleLineTextField1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void okBUT_Click(object sender, EventArgs e)
         {
-           
+            int id = Int32.Parse(LoginID.Text);
+            string pass = PassLogin.Text;
+            if (BLL.DangNhap_BLL(id, pass))
+            {
+                MainForm mf = new MainForm();
+                mf.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+            }
+        }
 
-
+        private void QuitBUT_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

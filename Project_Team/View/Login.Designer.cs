@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.QuitBUT = new MaterialSkin.Controls.MaterialFlatButton();
             this.RegisterBut = new MaterialSkin.Controls.MaterialFlatButton();
             this.okBUT = new MaterialSkin.Controls.MaterialFlatButton();
             this.PassLogin = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -38,21 +38,21 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
-            // materialFlatButton2
+            // QuitBUT
             // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Location = new System.Drawing.Point(301, 239);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(43, 36);
-            this.materialFlatButton2.TabIndex = 23;
-            this.materialFlatButton2.Text = "Quit";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
-            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
+            this.QuitBUT.AutoSize = true;
+            this.QuitBUT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.QuitBUT.Depth = 0;
+            this.QuitBUT.Location = new System.Drawing.Point(301, 239);
+            this.QuitBUT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.QuitBUT.MouseState = MaterialSkin.MouseState.HOVER;
+            this.QuitBUT.Name = "QuitBUT";
+            this.QuitBUT.Primary = false;
+            this.QuitBUT.Size = new System.Drawing.Size(43, 36);
+            this.QuitBUT.TabIndex = 23;
+            this.QuitBUT.Text = "Quit";
+            this.QuitBUT.UseVisualStyleBackColor = true;
+            this.QuitBUT.Click += new System.EventHandler(this.QuitBUT_Click);
             // 
             // RegisterBut
             // 
@@ -100,7 +100,6 @@
             this.PassLogin.Size = new System.Drawing.Size(290, 23);
             this.PassLogin.TabIndex = 20;
             this.PassLogin.UseSystemPasswordChar = false;
-            this.PassLogin.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
             // 
             // LoginID
             // 
@@ -116,7 +115,6 @@
             this.LoginID.Size = new System.Drawing.Size(290, 23);
             this.LoginID.TabIndex = 19;
             this.LoginID.UseSystemPasswordChar = false;
-            this.LoginID.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // materialLabel3
             // 
@@ -131,7 +129,6 @@
             this.materialLabel3.Size = new System.Drawing.Size(141, 19);
             this.materialLabel3.TabIndex = 18;
             this.materialLabel3.Text = "Đăng nhập hệ thống";
-            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
             // 
             // materialLabel2
             // 
@@ -147,7 +144,6 @@
             this.materialLabel2.TabIndex = 17;
             this.materialLabel2.Text = "Password";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // materialLabel1
             // 
@@ -163,14 +159,13 @@
             this.materialLabel1.TabIndex = 16;
             this.materialLabel1.Text = "ID";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 313);
-            this.Controls.Add(this.materialFlatButton2);
+            this.Controls.Add(this.QuitBUT);
             this.Controls.Add(this.RegisterBut);
             this.Controls.Add(this.okBUT);
             this.Controls.Add(this.PassLogin);
@@ -187,7 +182,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialFlatButton QuitBUT;
         private MaterialSkin.Controls.MaterialFlatButton RegisterBut;
         private MaterialSkin.Controls.MaterialFlatButton okBUT;
         private MaterialSkin.Controls.MaterialSingleLineTextField PassLogin;
