@@ -18,6 +18,11 @@ namespace Project_Team
         {
             return DAL.Add_User_DAL(us);
         }
+
+        public bool Add_MonHoc_BLL(MonHoc monHoc)
+        {
+            return DAL.Add_MonHoc_DAL(monHoc);
+        }
         public bool DangNhap_BLL(int id, string pass)
         {
             return DAL.DangNhap_DAL(id, pass);
