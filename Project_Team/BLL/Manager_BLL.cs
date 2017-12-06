@@ -14,9 +14,9 @@ namespace Project_Team
             DAL = new Manager_DAL();
         }
 
-        public void Add_User_BLL(Users us)
+        public bool Add_User_BLL(Users us)
         {
-            DAL.Add_User_DAL(us);
+            return DAL.Add_User_DAL(us);
         }
         public bool DangNhap_BLL(int id, string pass)
         {

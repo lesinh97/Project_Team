@@ -76,13 +76,13 @@
             this.newPassBox.Location = new System.Drawing.Point(168, 191);
             this.newPassBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.newPassBox.Name = "newPassBox";
-            this.newPassBox.PasswordChar = '♥';
+            this.newPassBox.PasswordChar = '\0';
             this.newPassBox.SelectedText = "";
             this.newPassBox.SelectionLength = 0;
             this.newPassBox.SelectionStart = 0;
             this.newPassBox.Size = new System.Drawing.Size(290, 23);
             this.newPassBox.TabIndex = 28;
-            this.newPassBox.UseSystemPasswordChar = false;
+            this.newPassBox.UseSystemPasswordChar = true;
             // 
             // newIDBox
             // 

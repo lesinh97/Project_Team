@@ -20,8 +20,8 @@ namespace Project_Team
         public int MaSinhVien { get; set; }
         [ForeignKey("MaSinhVien")]
         public virtual SinhVien SinhVien { get; set; }
-        //[Required]
-        //public double DiemTrungBinh { get; set; }
+        [Required]
+        public double DiemTrungBinh { get; set; }
 
     }
 }

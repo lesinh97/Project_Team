@@ -27,20 +27,33 @@ namespace Project_Team
             BLL = new Manager_BLL();
         }
 
+        private void clearBOX()
+        {
+            newIDBox.Clear();
+            newPassBox.Clear();
+        }
+
         private void ClearBUT_Click(object sender, EventArgs e)
         {
-            newIDBox.Text = "";
-            newPassBox.Text = "";
+            clearBOX();
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            bool check = true;
             Users us = new Users();
             us.ID = Int32.Parse(newIDBox.Text);
             us.Pass = newPassBox.Text;
-            BLL.Add_User_BLL(us);
-            MessageBox.Show("Đã thêm người dùng thành công");
-            this.Close();
+            if (BLL.Add_User_BLL(us))
+            {
+                MessageBox.Show("Thêm thành công người dùng mới");
+                this.Close();
+            }
+            else
+            {
+                clearBOX();
+            }
+            
         }
     }
 }
