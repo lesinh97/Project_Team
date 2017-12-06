@@ -40,7 +40,6 @@ namespace Project_Team
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            bool check = true;
             Users us = new Users();
             us.ID = Int32.Parse(newIDBox.Text);
             us.Pass = newPassBox.Text;

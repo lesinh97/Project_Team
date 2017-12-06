@@ -16,6 +16,7 @@ namespace Project_Team
             db = new Manager();
         }
 
+
         public bool Add_User_DAL(Users us)
         {
             var s = db.Userses.Where(p => p.ID == us.ID).Select(p => p);
@@ -31,6 +32,22 @@ namespace Project_Team
                 return true;
             }
             
+        }
+
+        public bool Add_MonHoc_DAL(MonHoc monHoc)
+        {
+            var s = db.MonHocs.Where(p => p.MaMonHoc.Equals(monHoc.MaMonHoc)).Select(p => p);
+            if(s.Any())
+            {
+                MessageBox.Show("Đã có môn học này trong hệ thống");
+                return false;
+            }
+            else
+            {
+                db.MonHocs.Add(monHoc);
+                db.SaveChanges();
+                return true;
+            }
         }
 
         public bool DangNhap_DAL(int id, string Pass)
