@@ -32,11 +32,11 @@ namespace Project_Team
             protected override void Seed(Manager context)
             {
                 context.Khoas.Add(new Khoa {MaKhoa = "CNTT", TenKhoa = "Công nghệ thông tin"});
-                context.ChuNhiems.Add(new ChuNhiem {MaGiaoVien = "CNTT_GV_1", TenGiaoVien = "Fuk"});
+                context.ChuNhiems.Add(new ChuNhiem {MaGiaoVien = "CNTT_GV_1", TenGiaoVien = "Bùi Hiển"});
                 context.Lops.Add(new Lop {MaLop = "CNTT1", TenLop = "15TCLC2", MaKhoa = "CNTT", MaGiaoVien = "CNTT_GV_1"});
                 context.MonHocs.Add(new MonHoc {MaMonHoc = "MH001", TenMonHoc = "BOT Cai Lậy", TinChi = 30});
-                context.SinhViens.Add(new SinhVien {MaSinhVien = 1, TenSinhVien = "Cai Lậy", GioiTinh = true, QueQuan = "Quảng Nam", NgaySinh = DateTime.Parse("1996-06-05"),MaLop = "CNTT1"});
-                context.KetQuas.Add(new KetQua {MaSinhVien = 1, MaMonHoc = "MH001", DiemTrungBinh = 10});
+                context.SinhViens.Add(new SinhVien {MaSinhVien = 1, TenSinhVien = "Cai Lậy", GioiTinh = true, QueQuan = "Quảng Nam", NgaySinh = DateTime.Parse("1996-06-05"),MaLop = "CNTT1", NienKhoa = 2015, TotNghiep = false});
+                context.KetQuas.Add(new KetQua {MaSinhVien = 1, MaMonHoc = "MH001"});
                 context.Userses.Add(new Users {ID = 1, Pass = "abc123"});
                 context.SaveChanges();
 
