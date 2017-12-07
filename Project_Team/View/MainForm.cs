@@ -27,11 +27,6 @@ namespace Project_Team
             BLL = new Manager_BLL();
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         //private void clearBOX_newMonHoc()
         //{
         //    newIDMonHocTextB.Clear();
@@ -81,7 +76,7 @@ namespace Project_Team
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             AddGiaoVien f = new AddGiaoVien();
-            f.add = new AddGiaoVien.CNhiem(BLL.Add_GiaoVien_BLL);
+            f.add = new AddGiaoVien.CNhiem(BLL.Add_ChuNhiem_BLL);
             f.Show();
         }
 

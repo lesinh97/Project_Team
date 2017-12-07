@@ -17,8 +17,6 @@ namespace Project_Team
         {
             db = new Manager();
         }
-
-
         public bool Add_User_DAL(Users us)
         {
             var s = db.Userses.Where(p => p.ID == us.ID).Select(p => p);
@@ -33,10 +31,7 @@ namespace Project_Team
                 db.SaveChanges();
                 return true;
             }
-            
         }
-        
-
         public bool Add_MonHoc_DAL(MonHoc monHoc)
         {
             var s = db.MonHocs.Where(p => p.MaMonHoc.Equals(monHoc.MaMonHoc)).Select(p => p);
@@ -52,15 +47,37 @@ namespace Project_Team
                 return true;
             }
         }
-        public bool Add_GiaoVien_DAL(ChuNhiem giaoVien)
-        {
-            //Sinh lam
-            return true;
-        }
         public bool Add_Khoa_DAL(Khoa khoaMoi)
         {
-            //Sinh lam
-            return true;
+            var s = db.Khoas.Where(p => p.MaKhoa == khoaMoi.MaKhoa).Select(p => p);
+            if (s.Any())
+            {
+                MessageBox.Show("Đã có khoa này");
+                return false;
+            }
+            else
+            {
+                db.Khoas.Add(khoaMoi);
+                db.SaveChanges();
+                return true;
+            }
+            
+        }
+        public bool Add_ChuNhiem_DAL(ChuNhiem cnhiem)
+        {
+            var s = db.ChuNhiems.Where(p => p.MaGiaoVien == cnhiem.MaGiaoVien).Select(p => p);
+            if (s.Any())
+            {
+                MessageBox.Show("Đã có giáo viên này");
+                return false;
+            }
+            else
+            {
+                db.ChuNhiems.Add(cnhiem);
+                db.SaveChanges();
+                return true;
+
+            }
         }
         public bool DangNhap_DAL(int id, string Pass)
         {
@@ -68,7 +85,6 @@ namespace Project_Team
             var s = db.Userses.Where(p => p.ID == id && p.Pass == Pass).Select(p => p);
             return (s.Any());
         }
-
         public bool loginCheck_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
         {
             int id = Int32.Parse(a.Text);

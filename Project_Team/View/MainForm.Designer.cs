@@ -574,7 +574,6 @@
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.TabControl_Main);
             this.Name = "MainForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.TabControl_Main.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
