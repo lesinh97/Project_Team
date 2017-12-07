@@ -33,13 +33,13 @@ namespace Project_Team
                 db.SaveChanges();
                 return true;
             }
-            
+
         }
 
         public bool Add_MonHoc_DAL(MonHoc monHoc)
         {
             var s = db.MonHocs.Where(p => p.MaMonHoc.Equals(monHoc.MaMonHoc)).Select(p => p);
-            if(s.Any())
+            if (s.Any())
             {
                 MessageBox.Show("Đã có môn học này trong hệ thống");
                 return false;
@@ -93,8 +93,23 @@ namespace Project_Team
             }
             else
             {
-                clearBOX_DAL(a,b);
+                clearBOX_DAL(a, b);
                 return false;
+            }
+        }
+        public bool Add_ChuNhiem_DAL(ChuNhiem cnhiem)
+        {
+            var s = db.ChuNhiems.Where(p => p.MaGiaoVien == cnhiem.MaGiaoVien).Select(p => p);
+            if (s.Any())
+            {
+                MessageBox.Show("Da co giao vien nay");
+                return false;
+            }
+            else
+            {
+                db.ChuNhiems.Add(cnhiem);
+                db.SaveChanges();
+                return true;
             }
         }
 
