@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="materialLabel7.Text" xml:space="preserve">
+    <value>♥ ID User gồm các chữ số nhỏ hơn 9 kí tự.
+
+♥ Phần mềm có các chức năng như xem danh sách sinh viên hiện tại, 
+    thêm, xóa, sửa danh sách sinh viên 
+    cũng như giảng viên chủ nhiệm, các môn học hiện có
+</value>
+  </data>
 </root>

@@ -117,7 +117,135 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1115, 487</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>TabControl_Main</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tab_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tab_add.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1115, 487</value>
+  </data>
+  <data name="tab_add.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tab_add.Text" xml:space="preserve">
+    <value>Thêm sinh viên</value>
+  </data>
+  <data name="&gt;&gt;tab_add.Name" xml:space="preserve">
+    <value>tab_add</value>
+  </data>
+  <data name="&gt;&gt;tab_add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_add.Parent" xml:space="preserve">
+    <value>TabControl_Main</value>
+  </data>
+  <data name="&gt;&gt;tab_add.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1115, 487</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Sửa thông tin</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>TabControl_Main</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TabControl_Main.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 111</value>
+  </data>
+  <data name="TabControl_Main.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1123, 513</value>
+  </data>
+  <data name="TabControl_Main.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControl_Main.Name" xml:space="preserve">
+    <value>TabControl_Main</value>
+  </data>
+  <data name="&gt;&gt;TabControl_Main.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTabControl, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TabControl_Main.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControl_Main.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAA4NJREFUeF7t
@@ -139,12 +267,11 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>855, 279</value>
+    <value>591, 91</value>
   </data>
   <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 96</value>
@@ -152,7 +279,6 @@
   <data name="pictureBox4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -163,10 +289,10 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -193,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>636, 279</value>
+    <value>330, 91</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 96</value>
@@ -211,10 +337,10 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -241,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 279</value>
+    <value>209, 91</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 96</value>
@@ -259,34 +385,34 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAODSURBVHhe7ZzHihRRGIUHc96LC7MgKKJ7BR9CMeBK8DF0pagogmAWhXkQt4KKKBiWho1xIZgD
-        6jkwwqU5I1XVN1XX+eADmWnrnvpn+saumTLGGGOMMcYYY4wxxhhjjOkxy+F+eA3ege/hjxnfzXyN39sH
-        +VoTiU3wBvwC/zT0M7wON0DTkcXwDPwJVZGbyHfHabgImhZshI+gKmoXH8L10DRgO3wLVSHH8Q3cBs1/
-        4G9+iuL/kz8EvxNmYQmM2e3MJrsjjwkCDriqYCk8BU0Ap5rjzHbaytmRu6IAzvNVoVLKRZsBK2CbRVYs
-        P8FlcPBwe0EVKId7YXWooKGxYVeg2snhZVgdKmhobLiJptrJ4W1YHSpoaGy4q6naySEXZtWhgobGhlNC
-        1U4Ov8PqUEFDY+MfwAgqaGhseJii2smhuyDgQXgEFTQ0NlehaieHnoYCnuGqdnK4B1aHChoaG24H8AxX
-        tZXSj3AprA4VNjQFJVbDVXY/RIUNTQE/vZBzOsrp51qYBRUgp03hIYn6/yk8DrOhAuS0KTwm5HGhukZM
-        78OFMBsqRE7bwFMqLo7UdWL4Cq6BWVFBctoWfnTkNVTXGkcWfyvMjgqT0y6sgw+gul4X2e1kG3RHUYFy
-        2hWOCSfhOLMjznZOwKx9/igqWE7HheMC1wk8w1XXV/K1VyDfScVRAXMaC66YeYbLBRQ30ThY8zec8t/8
-        Gr/H7YUqV7hNUUUMNYlRRQ81iVFFDzWJUUUPNYlRRQ81iVFFDzWJUUUPNYlRRQ81iVFFD83FAsjNM54Z
-        H4U34S34GHLhxWPMX5CZvkE+2vQU8jXT8Bg8ALm5x2v1htGCj5qKlfAgvAjvwZgnZLwWN+QuQbaxClaL
-        uoHQWMyFOyEfTXoCVVspZZtn4S44B1aDChs6LnwM9RxMefDSVp4/nIc74EQyH/KtX/JTcE29Cw9BZu49
-        7GYOw5dQ3WzNvoBH4DzYS9i3lujbY8t72A17A0+yONv4DdUN9VXOzqp/wJvTuz70813lVLbaKSyDPYMq
-        +CT5HK6GVcG/UMUVqgo8iXJcqOqvcl2AKugkW82T9pvhpA24TeQ9b4HF4XJeBRyCXD0XJ+Yn2Pomx4Li
-        fIAq3BD8Coujgg3J4qhQQ7I4KtSQLI4KNSSLo0INyeKoUEOyOCrUkCyOCjUkjTHGGGOMMcYYY4wxxhgz
-        KKam/gJRXepn97jbuQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAA4NJREFUeF7t
+        nMeKFFEYhQdz3osLsyAoonsFH0Ix4ErwMXSlqCiCYBaFeRC3goooGJaGjXEhmAPqOTDCpTkjVdU3Vdf5
+        4AOZaeue+mf6xq6ZMsYYY4wxxhhjjDHGGGOM6THL4X54Dd6B7+GPGd/NfI3f2wf5WhOJTfAG/AL/NPQz
+        vA43QNORxfAM/AlVkZvId8dpuAiaFmyEj6AqahcfwvXQNGA7fAtVIcfxDdwGzX/gb36K4v+TPwS/E2Zh
+        CYzZ7cwmuyOPCQIOuKpgKTwFTQCnmuPMdtrK2ZG7ogDO81WhUspFmwErYJtFViw/wWVw8HB7QRUoh3th
+        daigobFhV6DayeFlWB0qaGhsuImm2snhbVgdKmhobLirqdrJIRdm1aGChsaGU0LVTg6/w+pQQUNj4x/A
+        CCpoaGx4mKLayaG7IOBBeAQVNDQ2V6FqJ4eehgKe4ap2crgHVocKGhobbgfwDFe1ldKPcCmsDhU2NAUl
+        VsNVdj9EhQ1NAT+9kHM6yunnWpgFFSCnTeEhifr/KTwOs6EC5LQpPCbkcaG6Rkzvw4UwGypETtvAUyou
+        jtR1YvgKroFZUUFy2hZ+dOQ1VNcaRxZ/K8yOCpPTLqyDD6C6XhfZ7WQbdEdRgXLaFY4JJ+E4syPOdk7A
+        rH3+KCpYTseF4wLXCTzDVddX8rVXIN9JxVEBcxoLrph5hssFFDfROFjzN5zy3/wav8fthSpXuE1RRQw1
+        iVFFDzWJUUUPNYlRRQ81iVFFDzWJUUUPNYlRRQ81iVFFDzWJUUUPzcUCyM0znhkfhTfhLfgYcuHFY8xf
+        kJm+QT7a9BTyNdPwGDwAubnHa/WG0YKPmoqV8CC8CO/BmCdkvBY35C5BtrEKVou6gdBYzIU7IR9NegJV
+        Wyllm2fhLjgHVoMKGzoufAz1HEx58NJWnj+chzvgRDIf8q1f8lNwTb0LD0Fm7j3sZg7Dl1DdbM2+gEfg
+        PNhL2LeW6Ntjy3vYDXsDT7I42/gN1Q31Vc7Oqn/Am9O7PvTzXeVUttopLIM9gyr4JPkcroZVwb9QxRWq
+        CjyJclyo6q9yXYAq6CRbzZP2m+GkDbhN5D1vgcXhcl4FHIJcPRcn5ifY+ibHguJ8gCrcEPwKi6OCDcni
+        qFBDsjgq1JAsjgo1JIujQg3J4qhQQ7I4KtSQLI4KNSSNMcYYY4wxxhhjjDHGGDMopqb+AlFd6mf3uNu5
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 279</value>
+    <value>76, 91</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 96</value>
@@ -304,10 +430,10 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,81 +463,6 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1115, 487</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Welcome</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>materialTabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1115, 487</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>materialTabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="materialTabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 111</value>
-  </data>
-  <data name="materialTabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1123, 513</value>
-  </data>
-  <data name="materialTabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;materialTabControl1.Name" xml:space="preserve">
-    <value>materialTabControl1</value>
-  </data>
-  <data name="&gt;&gt;materialTabControl1.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTabControl, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialTabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;materialTabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
@@ -436,6 +487,78 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
+    <value>pictureBox4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
+    <value>pictureBox3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 123</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>869, 212</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Chức năng</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
