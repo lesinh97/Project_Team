@@ -28,7 +28,7 @@ namespace Project_Team
         }
         public void loadTenKhoa()
         {
-           
+          
 
         }
         public void loadGV()
