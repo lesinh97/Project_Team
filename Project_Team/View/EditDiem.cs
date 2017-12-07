@@ -43,6 +43,7 @@ namespace Project_Team
             kq.DiemGiuaKi = Double.Parse(tBDiemGK.Text);
             kq.DiemCuoiKi = Double.Parse(tBDiemCK.Text);
             ed1.Invoke(kq);
-    }
+        }
+        //////////////////////////////////////////////////////////////////////
     }
 }

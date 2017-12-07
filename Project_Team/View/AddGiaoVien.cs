@@ -33,5 +33,6 @@ namespace Project_Team
             giaoVien.TenGiaoVien = txtTenGiaoVien.Text;
             add.Invoke(giaoVien);
         }
+        //////////////////////////////////////////////////////////////
     }
 }

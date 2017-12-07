@@ -33,5 +33,6 @@ namespace Project_Team
             khoaMoi.TenKhoa = txtTenKhoa.Text;
             add.Invoke(khoaMoi);
         }
+        ///////////////////////////////////////////////////////////////////
     }
 }
