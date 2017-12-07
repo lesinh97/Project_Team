@@ -22,8 +22,12 @@ namespace Project_Team
         public DateTime NgaySinh { get; set; }
         [Required]
         public bool GioiTinh { get; set; }
-        public Nullable<double> DiemTrungBinh { get; set; }
-        public Nullable<int> DiemRenLuyen { get; set; }
+        [Required]
+        public bool TotNghiep { get; set; }
+        [Required]
+        public int NienKhoa { get; set; }
+        public double DiemTrungBinh { get; set; }
+        public double DiemRenLuyen { get; set; }
         public string Image { get; set; }
         [ForeignKey("MaLop")]
         public virtual Lop lops { get; set; }

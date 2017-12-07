@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Project_Team
 {
@@ -26,6 +29,21 @@ namespace Project_Team
         public bool DangNhap_BLL(int id, string pass)
         {
             return DAL.DangNhap_DAL(id, pass);
+        }
+
+        public bool loginCheck_BLL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
+        {
+             return DAL.loginCheck_DAL(a,b);
+        }
+
+        public void clearBOX_BLL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
+        {
+            DAL.clearBOX_DAL(a,b);
+        }
+
+        public bool newRegis_BLL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
+        {
+            return DAL.newRegister_DAL(a,b);
         }
     }
 }

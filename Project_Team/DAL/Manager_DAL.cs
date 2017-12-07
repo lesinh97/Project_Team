@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Project_Team
 {
@@ -56,5 +58,45 @@ namespace Project_Team
             var s = db.Userses.Where(p => p.ID == id && p.Pass == Pass).Select(p => p);
             return (s.Any());
         }
+
+        public bool loginCheck_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
+        {
+            int id = Int32.Parse(a.Text);
+            string pass = b.Text;
+            if (DangNhap_DAL(id, pass))
+            {
+                MainForm mf = new MainForm();
+                mf.Show();
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+                clearBOX_DAL(a, b);
+                return false;
+            }
+        }
+        public void clearBOX_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
+        {
+            a.Clear();
+            b.Clear();
+        }
+        public bool newRegister_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
+        {
+            Users us = new Users();
+            us.ID = Int32.Parse(a.Text);
+            us.Pass = b.Text;
+            if (Add_User_DAL(us))
+            {
+                MessageBox.Show("Thêm thành công người dùng mới");
+                return true;
+            }
+            else
+            {
+                clearBOX_DAL(a,b);
+                return false;
+            }
+        }
+
     }
 }
