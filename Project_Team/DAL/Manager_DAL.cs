@@ -35,6 +35,7 @@ namespace Project_Team
             }
             
         }
+        
 
         public bool Add_MonHoc_DAL(MonHoc monHoc)
         {
@@ -51,7 +52,16 @@ namespace Project_Team
                 return true;
             }
         }
-
+        public bool Add_GiaoVien_DAL(ChuNhiem giaoVien)
+        {
+            //Sinh lam
+            return true;
+        }
+        public bool Add_Khoa_DAL(Khoa khoaMoi)
+        {
+            //Sinh lam
+            return true;
+        }
         public bool DangNhap_DAL(int id, string Pass)
         {
             db = new Manager();
@@ -97,6 +107,19 @@ namespace Project_Team
                 return false;
             }
         }
-
+        public void Edit_Diem_DAL(KetQua kq)
+        {
+            //Son xau trai lam
+        }
+        public void Edit_ThongTin_DAL(SinhVien sv)
+        {
+            //Son xau trai lam
+        }
+        public string getTenLop_DAL(string maLop)
+        {
+            var s = db.Lops.Where(p => p.MaLop == maLop).Single();
+            string tenLop = s.TenLop;
+            return tenLop;
+        }
     }
 }

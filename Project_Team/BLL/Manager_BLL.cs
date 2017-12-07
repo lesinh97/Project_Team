@@ -26,6 +26,14 @@ namespace Project_Team
         {
             return DAL.Add_MonHoc_DAL(monHoc);
         }
+        public bool Add_GiaoVien_BLL(ChuNhiem giaoVien)
+        {
+            return DAL.Add_GiaoVien_DAL(giaoVien);
+        }
+        public bool Add_Khoa_BLL(Khoa khoaMoi)
+        {
+            return DAL.Add_Khoa_DAL(khoaMoi);
+        }
         public bool DangNhap_BLL(int id, string pass)
         {
             return DAL.DangNhap_DAL(id, pass);
@@ -44,6 +52,18 @@ namespace Project_Team
         public bool newRegis_BLL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
         {
             return DAL.newRegister_DAL(a,b);
+        }
+        public void Edit_Diem_BLL(KetQua kq)
+        {
+            DAL.Edit_Diem_DAL(kq); //Son xau trai lam
+        }
+        public void Edit_ThongTin_BLL(SinhVien sv)
+        {
+            DAL.Edit_ThongTin_DAL(sv); //Son xau trai lam
+        }
+        public string getTenLop_BLL(string malop)
+        {
+            return DAL.getTenLop_DAL(malop);
         }
     }
 }
