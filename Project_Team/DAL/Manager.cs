@@ -27,7 +27,7 @@ namespace Project_Team
         public virtual DbSet<KetQua> KetQuas { get; set; }
         public virtual DbSet<Users> Userses { get; set; }
 
-        public class Initializer : CreateDatabaseIfNotExists<Manager>
+        public class Initializer : DropCreateDatabaseIfModelChanges<Manager>
         {
             protected override void Seed(Manager context)
             {
@@ -35,8 +35,16 @@ namespace Project_Team
                 context.ChuNhiems.Add(new ChuNhiem {MaGiaoVien = "CNTT_GV_1", TenGiaoVien = "Bùi Hiển"});
                 context.Lops.Add(new Lop {MaLop = "CNTT1", TenLop = "15TCLC2", MaKhoa = "CNTT", MaGiaoVien = "CNTT_GV_1"});
                 context.MonHocs.Add(new MonHoc {MaMonHoc = "MH001", TenMonHoc = "BOT Cai Lậy", TinChi = 30});
+                context.MonHocs.Add(new MonHoc { MaMonHoc = "MH002", TenMonHoc = "BOT Cai Lậy", TinChi = 30 });
                 context.SinhViens.Add(new SinhVien {MaSinhVien = 1, TenSinhVien = "Cai Lậy", GioiTinh = true, QueQuan = "Quảng Nam", NgaySinh = DateTime.Parse("1996-06-05"),MaLop = "CNTT1", NienKhoa = 2015, TotNghiep = false});
-                context.KetQuas.Add(new KetQua {MaSinhVien = 1, MaMonHoc = "MH001"});
+                context.SinhViens.Add(new SinhVien { MaSinhVien = 2, TenSinhVien = "Cai Lậy", GioiTinh = true, QueQuan = "Quảng Nam", NgaySinh = DateTime.Parse("1996-06-05"), MaLop = "CNTT1", NienKhoa = 2015, TotNghiep = false });
+                context.SinhViens.Add(new SinhVien { MaSinhVien = 3, TenSinhVien = "Cai Lậy", GioiTinh = true, QueQuan = "Quảng Nam", NgaySinh = DateTime.Parse("1996-06-05"), MaLop = "CNTT1", NienKhoa = 2015, TotNghiep = false });
+                context.KetQuas.Add(new KetQua { MaSinhVien = 1, MaMonHoc = "MH001", DiemBaiTap = 6.9, DiemGiuaKi = 5.6, DiemCuoiKi = 7.2 });
+                context.KetQuas.Add(new KetQua { MaSinhVien = 1, MaMonHoc = "MH002", DiemBaiTap = 5, DiemGiuaKi = 4, DiemCuoiKi = 3 });
+                context.KetQuas.Add(new KetQua { MaSinhVien = 2, MaMonHoc = "MH001", DiemBaiTap = 8, DiemGiuaKi = 9, DiemCuoiKi = 10 });
+                context.KetQuas.Add(new KetQua { MaSinhVien = 2, MaMonHoc = "MH002", DiemBaiTap = 8, DiemGiuaKi = 7, DiemCuoiKi = 6 });
+                context.KetQuas.Add(new KetQua { MaSinhVien = 3, MaMonHoc = "MH001", DiemBaiTap = 5, DiemGiuaKi = 5.5, DiemCuoiKi = 6.5 });
+                context.KetQuas.Add(new KetQua { MaSinhVien = 3, MaMonHoc = "MH002", DiemBaiTap = 6.9, DiemGiuaKi = 5.6, DiemCuoiKi = 7.2 });
                 context.Userses.Add(new Users {ID = 1, Pass = "abc123"});
                 context.SaveChanges();
 

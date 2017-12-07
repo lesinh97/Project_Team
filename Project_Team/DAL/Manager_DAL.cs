@@ -98,5 +98,94 @@ namespace Project_Team
             }
         }
 
+        // Bắt đầu phần code chứng năng tính điểm trung bình
+        // Sở hữu Bùi Sơn
+
+        private string TinhDiemChu(double DiemThang10)
+        {
+            if (DiemThang10 >= 0 && DiemThang10 < 4) return "F";
+            else if (DiemThang10 >= 4 && DiemThang10 < 5.5) return "D";
+            else if (DiemThang10 >= 5.5 && DiemThang10 < 7) return "C";
+            else if (DiemThang10 >= 7 && DiemThang10 < 8.5) return "B";
+            else return "A";
+        }
+
+        public void TinhDTB_1Mon1SinhVien_DAL(string MaMonHoc, int MaSinhVien) 
+        {
+            KetQua s = db.KetQuas.Single(p => p.MaMonHoc.Equals(MaMonHoc.Trim()) && p.MaSinhVien == MaSinhVien);
+            s.DiemTrungBinh = s.DiemBaiTap * 0.2 + s.DiemGiuaKi * 0.2 + s.DiemCuoiKi * 0.6;
+            s.DiemChu = TinhDiemChu(s.DiemTrungBinh);
+            db.SaveChanges();
+        }
+
+        public void TinhDTB_MotMon_DAL(string MaMonHoc)
+        {
+            List<KetQua> s = db.KetQuas.Where(p => p.MaMonHoc == MaMonHoc).Select(p => p).ToList<KetQua>();
+            foreach (KetQua item in s)
+            {
+                TinhDTB_1Mon1SinhVien_DAL(MaMonHoc, item.MaSinhVien);
+            }
+        }
+
+        public void TinhDTB_TatCacMon_DAL()
+        {
+            List<MonHoc> s = db.MonHocs.Select(p => p).ToList<MonHoc>();
+            foreach (var item in s)
+            {
+                TinhDTB_MotMon_DAL(item.MaMonHoc);
+            }
+        }
+
+        public void TinhDTL_MotSinhVien_DAL(int MaSinhVien)
+        {
+            double diemTichLuy = 0;
+            int tongTinChi = 0;
+            var s = db.KetQuas.Where(p => p.MaSinhVien == MaSinhVien).Join(db.MonHocs, p => p.MaMonHoc, k => k.MaMonHoc,
+                (p, k) => new
+                {
+                    p.MaSinhVien,
+                    p.MaMonHoc,
+                    p.DiemChu,
+                    k.TinChi
+                }).ToList();
+            foreach (var item in s)
+            {
+                diemTichLuy += ToDiemThang4(item.DiemChu.Trim()) * item.TinChi;
+                tongTinChi += item.TinChi;
+            }
+            SinhVien sinhVien = db.SinhViens.Single(p => p.MaSinhVien == MaSinhVien);
+            sinhVien.DiemTrungBinh = diemTichLuy / tongTinChi;
+        }
+
+        private int ToDiemThang4(string DiemChu)
+        {
+            if (DiemChu.Equals("A")) return 4;
+            else if (DiemChu.Equals("B")) return 3;
+            else if (DiemChu.Equals("C")) return 2;
+            else if (DiemChu.Equals("D")) return 1;
+            else return 0;
+        }
+
+        public IEnumerable<object> ShowKetQua()
+        {
+            var s = db.KetQuas.Select(p => new
+            {
+                p.MaSinhVien,
+                p.MaMonHoc,
+                p.DiemTrungBinh,
+                p.DiemBaiTap,
+                p.DiemGiuaKi,
+                p.DiemCuoiKi,
+                p.DiemChu
+            }).ToList();
+            return s;
+        }
+
+        
+
+
+        // Kết thúc phần code chứng năng tính điểm trung bình
+        // Sở hữu Bùi Sơn
+
     }
 }
