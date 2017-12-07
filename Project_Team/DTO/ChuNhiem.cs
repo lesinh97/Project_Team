@@ -17,7 +17,7 @@ namespace Project_Team
         public virtual ICollection<Lop> Lops { get; set; }
         public ChuNhiem()
         {
-            
+
         }
     }
 }
