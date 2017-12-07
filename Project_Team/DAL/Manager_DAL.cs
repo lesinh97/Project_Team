@@ -137,5 +137,6 @@ namespace Project_Team
             string tenLop = s.TenLop;
             return tenLop;
         }
+        ///////////////////////////////////////////////////////
     }
 }
