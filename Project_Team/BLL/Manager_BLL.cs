@@ -45,5 +45,10 @@ namespace Project_Team
         {
             return DAL.newRegister_DAL(a,b);
         }
+        //Hàm get mã môn học của Sinh
+        public List<string> getMaMonHoc_comboBox_BLL(int mssv)
+        {
+            return DAL.getMaMonHoc_comboBox_DAL(mssv);
+        }
     }
 }

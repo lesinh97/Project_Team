@@ -98,5 +98,17 @@ namespace Project_Team
             }
         }
 
+        // Hàm get từ mã sinh viên ra edit của Sinh
+        public List<string> getMaMonHoc_comboBox_DAL(int mssv)
+        {
+            List<string> list = new List<string>();
+            var s = db.KetQuas.Where(p => p.MaSinhVien == mssv).Select(p => p.MaMonHoc).Distinct();
+            foreach (var i in list)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+
     }
 }
