@@ -45,9 +45,5 @@ namespace Project_Team
         {
             return DAL.newRegister_DAL(a,b);
         }
-        public bool Add_ChuNhiem_BLL(ChuNhiem cnhiem)
-        {
-            return DAL.Add_ChuNhiem_DAL(cnhiem);
-        }
     }
 }
