@@ -17,6 +17,7 @@ namespace Project_Team
         {
             db = new Manager();
         }
+
         public bool Add_User_DAL(Users us)
         {
             var s = db.Userses.Where(p => p.ID == us.ID).Select(p => p);
@@ -32,10 +33,11 @@ namespace Project_Team
                 return true;
             }
         }
+
         public bool Add_MonHoc_DAL(MonHoc monHoc)
         {
             var s = db.MonHocs.Where(p => p.MaMonHoc.Equals(monHoc.MaMonHoc)).Select(p => p);
-            if(s.Any())
+            if (s.Any())
             {
                 MessageBox.Show("Đã có môn học này trong hệ thống");
                 return false;
@@ -47,6 +49,7 @@ namespace Project_Team
                 return true;
             }
         }
+
         public bool Add_Khoa_DAL(Khoa khoaMoi)
         {
             var s = db.Khoas.Where(p => p.MaKhoa == khoaMoi.MaKhoa).Select(p => p);
@@ -61,8 +64,9 @@ namespace Project_Team
                 db.SaveChanges();
                 return true;
             }
-            
+
         }
+
         public bool Add_ChuNhiem_DAL(ChuNhiem cnhiem)
         {
             var s = db.ChuNhiems.Where(p => p.MaGiaoVien == cnhiem.MaGiaoVien).Select(p => p);
@@ -78,13 +82,14 @@ namespace Project_Team
                 return true;
             }
         }
-      
+
         public bool DangNhap_DAL(int id, string Pass)
         {
             db = new Manager();
             var s = db.Userses.Where(p => p.ID == id && p.Pass == Pass).Select(p => p);
             return (s.Any());
         }
+
         public bool loginCheck_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
         {
             int id = Int32.Parse(a.Text);
@@ -102,11 +107,13 @@ namespace Project_Team
                 return false;
             }
         }
+
         public void clearBOX_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
         {
             a.Clear();
             b.Clear();
         }
+
         public bool newRegister_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
         {
             Users us = new Users();
@@ -119,7 +126,7 @@ namespace Project_Team
             }
             else
             {
-                clearBOX_DAL(a,b);
+                clearBOX_DAL(a, b);
                 return false;
             }
         }
@@ -146,7 +153,7 @@ namespace Project_Team
             else return 4;
         }
 
-        public void TinhDTB_1Mon1SinhVien_DAL(string MaMonHoc, int MaSinhVien) 
+        public void TinhDTB_1Mon1SinhVien_DAL(string MaMonHoc, int MaSinhVien)
         {
             KetQua s = db.KetQuas.Single(p => p.MaMonHoc.Equals(MaMonHoc.Trim()) && p.MaSinhVien == MaSinhVien);
             s.DiemTrungBinh = s.DiemBaiTap * 0.2 + s.DiemGiuaKi * 0.2 + s.DiemCuoiKi * 0.6;
@@ -193,7 +200,7 @@ namespace Project_Team
             sinhVien.DiemTrungBinh = diemTichLuy / tongTinChi;
             db.SaveChanges();
         }
-        
+
         private double DiemThang4(string DiemChu)
         {
             if (DiemChu == "A") return 4;
@@ -208,13 +215,14 @@ namespace Project_Team
         // Sở hữu Bùi Sơn
 
 
-       
+
         public string getTenLop_DAL(string maLop)
         {
             var s = db.Lops.Where(p => p.MaLop == maLop).Single();
             string tenLop = s.TenLop;
             return tenLop;
         }
+
         ///////////////////////////////////////////////////////
         public KetQua Get_MotKetQua(string MaMonHoc, int MaSinhVien)
         {
@@ -228,6 +236,29 @@ namespace Project_Team
             kq.DiemGiuaKi = ketQua.DiemGiuaKi;
             kq.DiemCuoiKi = ketQua.DiemCuoiKi;
             db.SaveChanges();
+        }
+
+        // Hàm get từ mã sinh viên ra edit của Sinh
+        public List<string> Get_ListMaMonHoc_DAL(int mssv)
+        {
+            List<string> list = new List<string>();
+            var s = db.KetQuas.Where(p => p.MaSinhVien == mssv).Select(p => p.MonHoc.TenMonHoc).Distinct();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+
+        public List<int> getNienKhoa_CBB_DAL()
+        {
+            List<int> list = new List<int>();
+            var s = db.SinhViens.Select(p => p.NienKhoa).Distinct().ToList();
+            foreach (var i in s)
+            {
+                list.Add(i);
+            }
+            return list;
         }
     }
 }
