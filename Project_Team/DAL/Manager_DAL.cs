@@ -203,17 +203,6 @@ namespace Project_Team
             else return 0;
         }
 
-        //public List<object> ShowKetQua()
-        //{
-        //    TinhDTL_TatCacSinhVien_DAL();
-        //    var s = db.KetQuas.Join(db.SinhViens, p => p.MaSinhVien, k => k.MaSinhVien, (p, k) => new
-        //    {
-        //        p.MaSinhVien,
-        //        p.DiemChu,
-        //        k.DiemTrungBinh,
-        //    }).ToList<object>();
-        //    return s;
-        //}
 
         // Kết thúc phần code chứng năng tính điểm trung bình
         // Sở hữu Bùi Sơn
