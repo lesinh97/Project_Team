@@ -24,14 +24,14 @@ namespace Project_Team
         {
             return DAL.Add_MonHoc_DAL(monHoc);
         }
-
-
-
-
-
-
-
-
+        public bool Add_Khoa_BLL(Khoa khoaMoi)
+        {
+            return DAL.Add_Khoa_DAL(khoaMoi);
+        }
+        public bool Add_ChuNhiem_BLL(ChuNhiem cnhiem)
+        {
+            return DAL.Add_ChuNhiem_DAL(cnhiem);
+        }   
         public bool DangNhap_BLL(int id, string pass)
         {
             return DAL.DangNhap_DAL(id, pass);
@@ -48,8 +48,10 @@ namespace Project_Team
         {
             return DAL.newRegister_DAL(a,b);
         }
-
-
-
+        public string getTenLop_BLL(string malop)
+        {
+            return DAL.getTenLop_DAL(malop);
+        }
+        ////////////////////////////////////////////////
     }
 }

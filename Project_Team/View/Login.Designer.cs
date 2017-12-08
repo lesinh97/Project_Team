@@ -50,8 +50,8 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.tabTroGiup = new System.Windows.Forms.TabPage();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.TabControlWelcome.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabRegisrer.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             this.materialTabSelector1.BaseTabControl = this.TabControlWelcome;
             this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(88, 41);
+            this.materialTabSelector1.Location = new System.Drawing.Point(168, 41);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(309, 23);
@@ -95,8 +95,8 @@
             this.tabLogin.Controls.Add(this.materialLabel1);
             this.tabLogin.Location = new System.Drawing.Point(4, 22);
             this.tabLogin.Name = "tabLogin";
-            this.tabLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLogin.Size = new System.Drawing.Size(487, 205);
+            this.tabLogin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabLogin.Size = new System.Drawing.Size(487, 216);
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Login";
             // 
@@ -236,8 +236,8 @@
             this.tabRegisrer.Controls.Add(this.materialLabel6);
             this.tabRegisrer.Location = new System.Drawing.Point(4, 22);
             this.tabRegisrer.Name = "tabRegisrer";
-            this.tabRegisrer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegisrer.Size = new System.Drawing.Size(487, 205);
+            this.tabRegisrer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabRegisrer.Size = new System.Drawing.Size(487, 216);
             this.tabRegisrer.TabIndex = 1;
             this.tabRegisrer.Text = "Register";
             // 
@@ -370,11 +370,20 @@
             this.tabTroGiup.Controls.Add(this.materialLabel7);
             this.tabTroGiup.Location = new System.Drawing.Point(4, 22);
             this.tabTroGiup.Name = "tabTroGiup";
-            this.tabTroGiup.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTroGiup.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabTroGiup.Size = new System.Drawing.Size(487, 216);
             this.tabTroGiup.TabIndex = 2;
             this.tabTroGiup.Text = "Trợ giúp";
             this.tabTroGiup.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(259, 186);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "☺ Copyright 2017, 12, dedicated to IT Falcuty.\r\n     By Sinh, Son, Song, Trong.";
             // 
             // materialLabel7
             // 
@@ -388,15 +397,6 @@
             this.materialLabel7.Size = new System.Drawing.Size(470, 95);
             this.materialLabel7.TabIndex = 0;
             this.materialLabel7.Text = resources.GetString("materialLabel7.Text");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "☺ Copyright 2017, 12, dedicated to IT Falcuty.\r\n     By Sinh, Son, Song, Trong.";
             // 
             // Login
             // 
