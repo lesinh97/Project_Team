@@ -229,7 +229,7 @@ namespace Project_Team
         ///////////////////////////////////////////////////////
         public KetQua Get_MotKetQua(string MaMonHoc, int MaSinhVien)
         {
-            return db.KetQuas.Single(p => p.MaMonHoc == MaMonHoc && p.MaSinhVien == MaSinhVien);
+            return db.KetQuas.Single(p => p.MaMonHoc == MaMonHoc.Trim() && p.MaSinhVien == MaSinhVien);
         }
 
         public void Update_DiemMonHoc(KetQua ketQua)
@@ -238,6 +238,7 @@ namespace Project_Team
             kq.DiemBaiTap = ketQua.DiemBaiTap;
             kq.DiemGiuaKi = ketQua.DiemGiuaKi;
             kq.DiemCuoiKi = ketQua.DiemCuoiKi;
+            db.SaveChanges();
         }
     }
 }
