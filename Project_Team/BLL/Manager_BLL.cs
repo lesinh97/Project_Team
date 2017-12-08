@@ -52,7 +52,7 @@ namespace Project_Team
         
         public List<string> getMaMonHoc_comboBox_BLL(int mssv)
         {
-            return DAL.getMonHoc_comboBox_DAL(mssv)
+            return DAL.getMonHoc_comboBox_DAL(mssv);
         }
 
         public List<int> getNienKhoa_CBB_BLL()
