@@ -48,14 +48,6 @@ namespace Project_Team
         {
             return DAL.newRegister_DAL(a,b);
         }
-        public void Edit_Diem_BLL(KetQua kq)
-        {
-            DAL.Edit_Diem_DAL(kq); //Son xau trai lam
-        }
-        public void Edit_ThongTin_BLL(SinhVien sv)
-        {
-            DAL.Edit_ThongTin_DAL(sv); //Son xau trai lam
-        }
         public string getTenLop_BLL(string malop)
         {
             return DAL.getTenLop_DAL(malop);

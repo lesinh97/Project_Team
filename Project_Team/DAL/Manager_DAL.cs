@@ -76,9 +76,9 @@ namespace Project_Team
                 db.ChuNhiems.Add(cnhiem);
                 db.SaveChanges();
                 return true;
-
             }
         }
+      
         public bool DangNhap_DAL(int id, string Pass)
         {
             db = new Manager();
@@ -123,14 +123,103 @@ namespace Project_Team
                 return false;
             }
         }
-        public void Edit_Diem_DAL(KetQua kq)
+
+
+        // Bắt đầu phần code chứng năng tính điểm trung bình
+        // Sở hữu Bùi Sơn
+
+        private string TinhDiemChu(double DiemThang10)
         {
-            //Son xau trai lam
+            if (DiemThang10 >= 0 && DiemThang10 < 4) return "F";
+            else if (DiemThang10 >= 4 && DiemThang10 < 5.5) return "D";
+            else if (DiemThang10 >= 5.5 && DiemThang10 < 7) return "C";
+            else if (DiemThang10 >= 7 && DiemThang10 < 8.5) return "B";
+            else return "A";
         }
-        public void Edit_ThongTin_DAL(SinhVien sv)
+
+        private double TinhDiem4(double DiemThang10)
         {
-            //Son xau trai lam
+            if (DiemThang10 >= 0 && DiemThang10 < 4) return 0;
+            else if (DiemThang10 >= 4 && DiemThang10 < 5.5) return 1;
+            else if (DiemThang10 >= 5.5 && DiemThang10 < 7) return 2;
+            else if (DiemThang10 >= 7 && DiemThang10 < 8.5) return 3;
+            else return 4;
         }
+
+        public void TinhDTB_1Mon1SinhVien_DAL(string MaMonHoc, int MaSinhVien) 
+        {
+            KetQua s = db.KetQuas.Single(p => p.MaMonHoc.Equals(MaMonHoc.Trim()) && p.MaSinhVien == MaSinhVien);
+            s.DiemTrungBinh = s.DiemBaiTap * 0.2 + s.DiemGiuaKi * 0.2 + s.DiemCuoiKi * 0.6;
+            s.DiemChu = TinhDiemChu(s.DiemTrungBinh);
+            db.SaveChanges();
+        }
+
+        public void TinhDTB_MotMon_DAL(string MaMonHoc)
+        {
+            List<KetQua> s = db.KetQuas.Where(p => p.MaMonHoc == MaMonHoc).Select(p => p).ToList<KetQua>();
+            foreach (KetQua item in s)
+            {
+                TinhDTB_1Mon1SinhVien_DAL(MaMonHoc, item.MaSinhVien);
+            }
+        }
+
+        public void TinhDTB_TatCacMon_DAL()
+        {
+            List<MonHoc> s = db.MonHocs.Select(p => p).ToList<MonHoc>();
+            foreach (var item in s)
+            {
+                TinhDTB_MotMon_DAL(item.MaMonHoc);
+            }
+        }
+
+        public void TinhDTL_MotSinhVien_DAL(int MaSinhVien)
+        {
+            double diemTichLuy = 0;
+            int tongTinChi = 0;
+            var s = db.KetQuas.Where(p => p.MaSinhVien == MaSinhVien).Join(db.MonHocs, p => p.MaMonHoc, k => k.MaMonHoc,
+                (p, k) => new
+                {
+                    p.MaSinhVien,
+                    p.MaMonHoc,
+                    p.DiemTrungBinh,
+                    k.TinChi
+                }).ToList();
+            foreach (var item in s)
+            {
+                diemTichLuy = diemTichLuy + TinhDiem4(item.DiemTrungBinh) * item.TinChi;
+                tongTinChi += item.TinChi;
+            }
+            SinhVien sinhVien = db.SinhViens.Single(p => p.MaSinhVien == MaSinhVien);
+            sinhVien.DiemTrungBinh = diemTichLuy / tongTinChi;
+            db.SaveChanges();
+        }
+        
+        private double DiemThang4(string DiemChu)
+        {
+            if (DiemChu == "A") return 4;
+            else if (DiemChu == "B") return 3;
+            else if (DiemChu == "C") return 2;
+            else if (DiemChu == "D") return 1;
+            else return 0;
+        }
+
+        //public List<object> ShowKetQua()
+        //{
+        //    TinhDTL_TatCacSinhVien_DAL();
+        //    var s = db.KetQuas.Join(db.SinhViens, p => p.MaSinhVien, k => k.MaSinhVien, (p, k) => new
+        //    {
+        //        p.MaSinhVien,
+        //        p.DiemChu,
+        //        k.DiemTrungBinh,
+        //    }).ToList<object>();
+        //    return s;
+        //}
+
+        // Kết thúc phần code chứng năng tính điểm trung bình
+        // Sở hữu Bùi Sơn
+
+
+       
         public string getTenLop_DAL(string maLop)
         {
             var s = db.Lops.Where(p => p.MaLop == maLop).Single();
@@ -138,5 +227,6 @@ namespace Project_Team
             return tenLop;
         }
         ///////////////////////////////////////////////////////
+
     }
 }

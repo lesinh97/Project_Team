@@ -36,10 +36,9 @@ namespace Project_Team
                 context.Lops.Add(new Lop {MaLop = "CNTT1", TenLop = "15TCLC2", MaKhoa = "CNTT", MaGiaoVien = "CNTT_GV_1"});
                 context.MonHocs.Add(new MonHoc {MaMonHoc = "MH001", TenMonHoc = "BOT Cai Lậy", TinChi = 30});
                 context.SinhViens.Add(new SinhVien {MaSinhVien = 1, TenSinhVien = "Cai Lậy", GioiTinh = true, QueQuan = "Quảng Nam", NgaySinh = DateTime.Parse("1996-06-05"),MaLop = "CNTT1", NienKhoa = 2015, TotNghiep = false});
-                context.KetQuas.Add(new KetQua {MaSinhVien = 1, MaMonHoc = "MH001"});
+                context.KetQuas.Add(new KetQua { MaSinhVien = 1, MaMonHoc = "MH001"});
                 context.Userses.Add(new Users {ID = 1, Pass = "abc123"});
                 context.SaveChanges();
-
             }
         }
 
