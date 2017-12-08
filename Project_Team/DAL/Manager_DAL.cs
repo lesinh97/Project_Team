@@ -123,14 +123,7 @@ namespace Project_Team
                 return false;
             }
         }
-        public void Edit_Diem_DAL(KetQua kq)
-        {
-            //Son xau trai lam
-        }
-        public void Edit_ThongTin_DAL(SinhVien sv)
-        {
-            //Son xau trai lam
-        }
+
         public string getTenLop_DAL(string maLop)
         {
             var s = db.Lops.Where(p => p.MaLop == maLop).Single();
@@ -138,5 +131,116 @@ namespace Project_Team
             return tenLop;
         }
         ///////////////////////////////////////////////////////
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Hàm get từ mã sinh viên ra edit của Sinh
+        public List<string> getMonHoc_comboBox_DAL(int mssv)
+        {
+            List<string> list = new List<string>();
+            var s = db.KetQuas.Where(p => p.MaSinhVien == mssv).Select(p => p.MonHoc.TenMonHoc).Distinct();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+
+        public List<int> getNienKhoa_CBB_DAL()
+        {
+            List<int> list = new List<int>();
+            var s = db.SinhViens.Select(p => p.NienKhoa).Distinct().ToList();
+            foreach (var i in s)
+            {
+                list.Add(i);
+            }
+            return list;
+        }
+        }
     }
 }
