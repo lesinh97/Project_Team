@@ -229,5 +229,16 @@ namespace Project_Team
             kq.DiemCuoiKi = ketQua.DiemCuoiKi;
             db.SaveChanges();
         }
+
+        public List<string> Get_ListMaMonHoc(int MaSinhVien)
+        {
+            List<string> list = new List<string>();
+            var s = db.KetQuas.Where(p => p.MaSinhVien == MaSinhVien).Select(p => p.MaMonHoc).ToList();
+            foreach (var item in s)
+            {
+                list.Add(item.Trim());
+            }
+            return list;
+        }
     }
 }
