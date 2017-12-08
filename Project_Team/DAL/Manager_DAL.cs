@@ -194,6 +194,15 @@ namespace Project_Team
             db.SaveChanges();
         }
         
+        public void TinhDTL_TatCaSinhVien()
+        {
+            var s = db.SinhViens.Select(p => p.MaSinhVien).ToList();
+            foreach (var item in s)
+            {
+                TinhDTL_MotSinhVien_DAL(item);
+            }
+        }
+
         private double DiemThang4(string DiemChu)
         {
             if (DiemChu == "A") return 4;
@@ -216,21 +225,21 @@ namespace Project_Team
             return tenLop;
         }
         ///////////////////////////////////////////////////////
-        public KetQua Get_MotKetQua(string MaMonHoc, int MaSinhVien)
+        public KetQua Get_MotKetQua_DAL(string MaMonHoc, int MaSinhVien)
         {
             return db.KetQuas.Single(p => p.MaMonHoc == MaMonHoc.Trim() && p.MaSinhVien == MaSinhVien);
         }
 
         public void Update_DiemMonHoc(KetQua ketQua)
         {
-            KetQua kq = Get_MotKetQua(ketQua.MaMonHoc, ketQua.MaSinhVien);
+            KetQua kq = Get_MotKetQua_DAL(ketQua.MaMonHoc, ketQua.MaSinhVien);
             kq.DiemBaiTap = ketQua.DiemBaiTap;
             kq.DiemGiuaKi = ketQua.DiemGiuaKi;
             kq.DiemCuoiKi = ketQua.DiemCuoiKi;
             db.SaveChanges();
         }
 
-        public List<string> Get_ListMaMonHoc(int MaSinhVien)
+        public List<string> Get_ListMaMonHoc_DAL(int MaSinhVien)
         {
             List<string> list = new List<string>();
             var s = db.KetQuas.Where(p => p.MaSinhVien == MaSinhVien).Select(p => p.MaMonHoc).ToList();
