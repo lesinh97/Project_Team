@@ -47,38 +47,38 @@ namespace Project_Team
                 return true;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public bool Add_Khoa_DAL(Khoa khoaMoi)
+        {
+            var s = db.Khoas.Where(p => p.MaKhoa == khoaMoi.MaKhoa).Select(p => p);
+            if (s.Any())
+            {
+                MessageBox.Show("Đã có khoa này");
+                return false;
+            }
+            else
+            {
+                db.Khoas.Add(khoaMoi);
+                db.SaveChanges();
+                return true;
+            }
+            
+        }
+        public bool Add_ChuNhiem_DAL(ChuNhiem cnhiem)
+        {
+            var s = db.ChuNhiems.Where(p => p.MaGiaoVien == cnhiem.MaGiaoVien).Select(p => p);
+            if (s.Any())
+            {
+                MessageBox.Show("Đã có giáo viên này");
+                return false;
+            }
+            else
+            {
+                db.ChuNhiems.Add(cnhiem);
+                db.SaveChanges();
+                return true;
+            }
+        }
+      
         public bool DangNhap_DAL(int id, string Pass)
         {
             db = new Manager();
@@ -217,6 +217,16 @@ namespace Project_Team
 
         // Kết thúc phần code chứng năng tính điểm trung bình
         // Sở hữu Bùi Sơn
+
+
+       
+        public string getTenLop_DAL(string maLop)
+        {
+            var s = db.Lops.Where(p => p.MaLop == maLop).Single();
+            string tenLop = s.TenLop;
+            return tenLop;
+        }
+        ///////////////////////////////////////////////////////
 
     }
 }

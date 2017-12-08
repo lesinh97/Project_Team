@@ -27,11 +27,6 @@ namespace Project_Team
             BLL = new Manager_BLL();
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         //private void clearBOX_newMonHoc()
         //{
         //    newIDMonHocTextB.Clear();
@@ -54,14 +49,48 @@ namespace Project_Team
         //    }
         //}
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TabControl_Main.SelectTab(tabAdd);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            TabControl_Main.SelectTab(tabSearch);
+        }
+
+        private void btEditDiem_Click(object sender, EventArgs e)
+        {
+            EditDiem f1 = new EditDiem();
+            f1.ed1 = new EditDiem.Diem(BLL.Edit_Diem_BLL);
+            f1.Show();
+        }
+
+        private void btEditThongTin_Click(object sender, EventArgs e)
+        {
+            EditThongTin f2 = new EditThongTin();
+            f2.ed2 = new EditThongTin.ThongTin(BLL.Edit_ThongTin_BLL);
+            f2.Show();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            AddGiaoVien f = new AddGiaoVien();
+            f.add = new AddGiaoVien.CNhiem(BLL.Add_ChuNhiem_BLL);
+            f.Show();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            AddKhoa f = new AddKhoa();
+            f.add = new AddKhoa.AKhoa(BLL.Add_Khoa_BLL);
+            f.Show();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        //////////////////////////////////////////////////////////////////////////////
     }
 }
