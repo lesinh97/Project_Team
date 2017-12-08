@@ -17,8 +17,6 @@ namespace Project_Team
         {
             db = new Manager();
         }
-
-
         public bool Add_User_DAL(Users us)
         {
             var s = db.Userses.Where(p => p.ID == us.ID).Select(p => p);
@@ -33,9 +31,7 @@ namespace Project_Team
                 db.SaveChanges();
                 return true;
             }
-            
         }
-
         public bool Add_MonHoc_DAL(MonHoc monHoc)
         {
             var s = db.MonHocs.Where(p => p.MaMonHoc.Equals(monHoc.MaMonHoc)).Select(p => p);
@@ -52,13 +48,43 @@ namespace Project_Team
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public bool DangNhap_DAL(int id, string Pass)
         {
             db = new Manager();
             var s = db.Userses.Where(p => p.ID == id && p.Pass == Pass).Select(p => p);
             return (s.Any());
         }
-
         public bool loginCheck_DAL(MaterialSingleLineTextField a, MaterialSingleLineTextField b)
         {
             int id = Int32.Parse(a.Text);
@@ -98,6 +124,7 @@ namespace Project_Team
             }
         }
 
+
         // Bắt đầu phần code chứng năng tính điểm trung bình
         // Sở hữu Bùi Sơn
 
@@ -108,6 +135,15 @@ namespace Project_Team
             else if (DiemThang10 >= 5.5 && DiemThang10 < 7) return "C";
             else if (DiemThang10 >= 7 && DiemThang10 < 8.5) return "B";
             else return "A";
+        }
+
+        private double TinhDiem4(double DiemThang10)
+        {
+            if (DiemThang10 >= 0 && DiemThang10 < 4) return 0;
+            else if (DiemThang10 >= 4 && DiemThang10 < 5.5) return 1;
+            else if (DiemThang10 >= 5.5 && DiemThang10 < 7) return 2;
+            else if (DiemThang10 >= 7 && DiemThang10 < 8.5) return 3;
+            else return 4;
         }
 
         public void TinhDTB_1Mon1SinhVien_DAL(string MaMonHoc, int MaSinhVien) 
@@ -145,44 +181,39 @@ namespace Project_Team
                 {
                     p.MaSinhVien,
                     p.MaMonHoc,
-                    p.DiemChu,
+                    p.DiemTrungBinh,
                     k.TinChi
                 }).ToList();
             foreach (var item in s)
             {
-                diemTichLuy += ToDiemThang4(item.DiemChu.Trim()) * item.TinChi;
+                diemTichLuy = diemTichLuy + TinhDiem4(item.DiemTrungBinh) * item.TinChi;
                 tongTinChi += item.TinChi;
             }
             SinhVien sinhVien = db.SinhViens.Single(p => p.MaSinhVien == MaSinhVien);
             sinhVien.DiemTrungBinh = diemTichLuy / tongTinChi;
+            db.SaveChanges();
         }
-
-        private int ToDiemThang4(string DiemChu)
+        
+        private double DiemThang4(string DiemChu)
         {
-            if (DiemChu.Equals("A")) return 4;
-            else if (DiemChu.Equals("B")) return 3;
-            else if (DiemChu.Equals("C")) return 2;
-            else if (DiemChu.Equals("D")) return 1;
+            if (DiemChu == "A") return 4;
+            else if (DiemChu == "B") return 3;
+            else if (DiemChu == "C") return 2;
+            else if (DiemChu == "D") return 1;
             else return 0;
         }
 
-        public IEnumerable<object> ShowKetQua()
-        {
-            var s = db.KetQuas.Select(p => new
-            {
-                p.MaSinhVien,
-                p.MaMonHoc,
-                p.DiemTrungBinh,
-                p.DiemBaiTap,
-                p.DiemGiuaKi,
-                p.DiemCuoiKi,
-                p.DiemChu
-            }).ToList();
-            return s;
-        }
-
-        
-
+        //public List<object> ShowKetQua()
+        //{
+        //    TinhDTL_TatCacSinhVien_DAL();
+        //    var s = db.KetQuas.Join(db.SinhViens, p => p.MaSinhVien, k => k.MaSinhVien, (p, k) => new
+        //    {
+        //        p.MaSinhVien,
+        //        p.DiemChu,
+        //        k.DiemTrungBinh,
+        //    }).ToList<object>();
+        //    return s;
+        //}
 
         // Kết thúc phần code chứng năng tính điểm trung bình
         // Sở hữu Bùi Sơn
