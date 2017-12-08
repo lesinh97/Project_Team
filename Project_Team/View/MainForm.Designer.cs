@@ -83,14 +83,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabKhac = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.TabControl_Main.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -507,14 +507,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.TabControl_Main;
-            this.materialTabSelector1.Depth = 0;
-            resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            // 
             // tabKhac
             // 
             this.tabKhac.BackColor = System.Drawing.Color.White;
@@ -522,6 +514,11 @@
             this.tabKhac.Controls.Add(this.groupBox5);
             resources.ApplyResources(this.tabKhac, "tabKhac");
             this.tabKhac.Name = "tabKhac";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // groupBox5
             // 
@@ -559,12 +556,14 @@
             resources.ApplyResources(this.pictureBox8, "pictureBox8");
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
-            // label10
+            // materialTabSelector1
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
+            this.materialTabSelector1.BaseTabControl = this.TabControl_Main;
+            this.materialTabSelector1.Depth = 0;
+            resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
             // 
             // MainForm
             // 

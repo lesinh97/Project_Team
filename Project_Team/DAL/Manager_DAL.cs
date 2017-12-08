@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -238,7 +239,7 @@ namespace Project_Team
             db.SaveChanges();
         }
 
-        // Hàm get từ mã sinh viên ra edit của Sinh
+        // Các hàm get comboBox
         public List<string> Get_ListMaMonHoc_DAL(int mssv)
         {
             List<string> list = new List<string>();
@@ -249,8 +250,37 @@ namespace Project_Team
             }
             return list;
         }
-
-        public List<int> getNienKhoa_CBB_DAL()
+        public List<string> Get_ListMaMonHoc_DAL()
+        {
+            List<string> list = new List<string>();
+            var s = db.KetQuas.Select(p => p.MaMonHoc).ToList();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+        public List<string> Get_ListQueQuan_DAL(int mssv)
+        {
+            List<string> list = new List<string>();
+            var s = db.SinhViens.Where(p=>p.MaSinhVien == mssv).Select(p => p.QueQuan).ToList();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+        public List<string> Get_QueQuan_DAL()
+        {
+            List<string> list = new List<string>();
+            var s = db.SinhViens.Select(p => p.QueQuan).Distinct().ToList();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+        public List<int> Get_ListNienKhoa_DAL()
         {
             List<int> list = new List<int>();
             var s = db.SinhViens.Select(p => p.NienKhoa).Distinct().ToList();
@@ -260,5 +290,58 @@ namespace Project_Team
             }
             return list;
         }
+        public List<int> Get_ListNienKhoa_DAL(int mssv)
+        {
+            List<int> list = new List<int>();
+            var s = db.SinhViens.Where(p=>p.MaSinhVien == mssv).Select(p => p.NienKhoa).ToList();
+            foreach (var i in s)
+            {
+                list.Add(i);
+            }
+            return list;
+        }
+        public List<string> Get_ListChuNhiem_DAL()
+        {
+            List<string> list= new List<string>();
+            var s = db.ChuNhiems.Select(p => p.TenGiaoVien).ToList();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+        public List<string> Get_ListChuNhiem_DAL(string MaKhoa)
+        {
+            List<string> list = new List<string>();
+            var s = db.ChuNhiems.Where(p => p.MaKhoa == MaKhoa).Select(p => p.TenGiaoVien).ToList();
+            foreach (var i in s)
+            {
+                list.Add(i.Trim());
+            }
+            return list;
+        }
+        public List<string> Get_ListLop_DAL()
+        {
+            List<string> list = new List<string>();
+            var s = db.Lops.Select(p => p.TenLop).Distinct().ToList();
+            foreach (var iLop in s)
+            {
+                list.Add(iLop);
+            }
+            return list;
+        }
+
+        public List<string> Get_ListLop_DAL(int mssv)
+        {
+            List<string> list = new List<string>();
+            var s = db.SinhViens.Where(p => p.MaSinhVien == mssv)
+                .Join(db.Lops, p => p.MaLop, k => k.MaLop, (p, k) => new {k.TenLop}).Select(k=>k.TenLop);
+            foreach (var iLop in s)
+            {
+                list.Add(iLop);
+            }
+            return list;
+        }
+        
     }
 }
