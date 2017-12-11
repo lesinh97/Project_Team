@@ -313,7 +313,7 @@ namespace Project_Team
         public List<string> Get_ListChuNhiem_DAL(string MaKhoa)
         {
             List<string> list = new List<string>();
-            var s = db.ChuNhiems.Where(p => p.MaKhoa == MaKhoa).Select(p => p.TenGiaoVien).ToList();
+            var s = db.ChuNhiems.Select(p => p.TenGiaoVien).ToList();
             foreach (var i in s)
             {
                 list.Add(i.Trim());
@@ -330,7 +330,6 @@ namespace Project_Team
             }
             return list;
         }
-
         public List<string> Get_ListLop_DAL(int mssv)
         {
             List<string> list = new List<string>();

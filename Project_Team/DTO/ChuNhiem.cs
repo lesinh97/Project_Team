@@ -14,10 +14,6 @@ namespace Project_Team
         public string MaGiaoVien { get; set; }
         [Required]
         public string TenGiaoVien { get; set; }
-        [Required]
-        public string MaKhoa { get; set; }
-        [ForeignKey("MaKhoa")]
-        public virtual  Khoa Khoas { get; set; }
         public virtual ICollection<Lop> Lops { get; set; }
         public ChuNhiem()
         {

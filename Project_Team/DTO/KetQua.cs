@@ -15,7 +15,6 @@ namespace Project_Team
         public string MaMonHoc { get; set; }
         [ForeignKey("MaMonHoc")]
         public virtual MonHoc MonHoc { get; set; }
-
         [Column(Order = 1), Key]
         public int MaSinhVien { get; set; }
         [ForeignKey("MaSinhVien")]

@@ -9,7 +9,7 @@ namespace Project_Team.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Project_Team.Manager context)
