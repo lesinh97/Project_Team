@@ -53,5 +53,10 @@ namespace Project_Team
             return DAL.getTenLop_DAL(malop);
         }
         ////////////////////////////////////////////////
+        //songtranvan
+        public void ReadExcel_BLL(string path)
+        {
+            DAL.ReadExcel_DAL(path);
+        }
     }
 }

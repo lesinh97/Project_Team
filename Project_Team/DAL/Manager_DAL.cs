@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Project_Team
 {
@@ -249,5 +251,57 @@ namespace Project_Team
             }
             return list;
         }
+        //songtranvan//
+        public bool Check_SV_DAL(int MaSv)
+        {
+            var s = db.SinhViens.Where(p => p.MaSinhVien == MaSv).Select(p => p);
+            if (s.Any())
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        public bool Check_MH_DAL(string MaMh)
+        {
+            var s = db.MonHocs.Where(p => p.MaMonHoc == MaMh).Select(p => p);
+            if (s.Any())
+            {
+                return false;
+            }
+            else return true;
+        }
+        public void ReadExcel_DAL(string path)
+        {
+            string filename = path;
+            Excel.Application ExcelApp = new Excel.Application();
+            ExcelApp.Workbooks.Open(filename);
+            foreach (Excel.Worksheet ws in ExcelApp.Worksheets)
+            {
+                int i = 2;
+                while (ws.Range["B" + i].Value != null)
+                {
+                    string tmpMmh = ws.Range["A" + i].Value.ToString();
+                    int tmpMsv = int.Parse(ws.Range["B" + i].Value.ToString());
+                    if (Check_SV_DAL(tmpMsv) == false && Check_MH_DAL(tmpMmh) == false)
+                    {
+                        KetQua kq = new KetQua();
+                        kq.MaMonHoc = ws.Range["A" + i].Value.ToString();
+                        kq.MaSinhVien = int.Parse(ws.Range["B" + i].Value.ToString());
+                        kq.DiemBaiTap = double.Parse(ws.Range["C" + i].Value.ToString());
+                        kq.DiemGiuaKi = double.Parse(ws.Range["D" + i].Value.ToString());
+                        kq.DiemCuoiKi = double.Parse(ws.Range["E" + i].Value.ToString());
+                        db.KetQuas.Add(kq);
+                        db.SaveChanges();
+                        i++;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+            }
+        }
+
     }
 }
