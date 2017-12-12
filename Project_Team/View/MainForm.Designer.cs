@@ -88,6 +88,15 @@
             this.pictureBox_Add_Khoa = new System.Windows.Forms.PictureBox();
             this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotNghiep = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TabControl_Main.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -218,8 +227,6 @@
             // cBNienKhoa
             // 
             this.cBNienKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cBNienKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cBNienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBNienKhoa.FormattingEnabled = true;
             resources.ApplyResources(this.cBNienKhoa, "cBNienKhoa");
             this.cBNienKhoa.Name = "cBNienKhoa";
@@ -260,7 +267,6 @@
             // 
             resources.ApplyResources(this.rBNu, "rBNu");
             this.rBNu.Name = "rBNu";
-            this.rBNu.TabStop = true;
             this.rBNu.UseVisualStyleBackColor = true;
             // 
             // rBNam
@@ -576,6 +582,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.MaSinhVien,
+            this.TenSinhVien,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.QueQuan,
+            this.TenLop,
+            this.TenKhoa,
+            this.TotNghiep});
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
@@ -640,6 +656,59 @@
             resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
+            // 
+            // STT
+            // 
+            resources.ApplyResources(this.STT, "STT");
+            this.STT.Name = "STT";
+            // 
+            // MaSinhVien
+            // 
+            this.MaSinhVien.DataPropertyName = "MaSinhVien";
+            resources.ApplyResources(this.MaSinhVien, "MaSinhVien");
+            this.MaSinhVien.Name = "MaSinhVien";
+            // 
+            // TenSinhVien
+            // 
+            this.TenSinhVien.DataPropertyName = "TenSinhVien";
+            resources.ApplyResources(this.TenSinhVien, "TenSinhVien");
+            this.TenSinhVien.Name = "TenSinhVien";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            resources.ApplyResources(this.GioiTinh, "GioiTinh");
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            resources.ApplyResources(this.NgaySinh, "NgaySinh");
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // QueQuan
+            // 
+            this.QueQuan.DataPropertyName = "QueQuan";
+            resources.ApplyResources(this.QueQuan, "QueQuan");
+            this.QueQuan.Name = "QueQuan";
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            resources.ApplyResources(this.TenLop, "TenLop");
+            this.TenLop.Name = "TenLop";
+            // 
+            // TenKhoa
+            // 
+            this.TenKhoa.DataPropertyName = "TenKhoa";
+            resources.ApplyResources(this.TenKhoa, "TenKhoa");
+            this.TenKhoa.Name = "TenKhoa";
+            // 
+            // TotNghiep
+            // 
+            this.TotNghiep.DataPropertyName = "TotNghiep";
+            resources.ApplyResources(this.TotNghiep, "TotNghiep");
+            this.TotNghiep.Name = "TotNghiep";
             // 
             // MainForm
             // 
@@ -742,5 +811,14 @@
         private System.Windows.Forms.PictureBox pictureBox_Excel;
         private System.Windows.Forms.RadioButton rBNu;
         private System.Windows.Forms.RadioButton rBNam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoa;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TotNghiep;
     }
 }

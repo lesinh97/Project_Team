@@ -419,12 +419,29 @@ namespace Project_Team
         {
             List<object> list = new List<object>();
             //var r = db.SinhViens.Join(db.KetQuas, p => p.MaSinhVien, k => k.MaSinhVien, (p, k) => k).Where(k => k.MonHoc.MaMonHoc.Contains(MonHoc));
+            if(MonHoc.Contains("@")) {
+                list = db.SinhViens.Where(p => (p.MaSinhVien.ToString().Contains(MaSinhVien)
+            && p.TenSinhVien.Contains(TenSinhVien)
+            && p.lops.TenLop.Contains(TenLop)
+            && p.lops.Khoa.TenKhoa.Contains(TenKhoa)
+            && p.lops.ChuNhiem.TenGiaoVien.Contains(GVCN))).Select(p => new
+            { p.MaSinhVien,
+              p.TenSinhVien,
+              p.GioiTinh,
+              p.NgaySinh,
+              p.QueQuan,
+              p.lops.TenLop,
+              p.lops.Khoa.TenKhoa,
+              p.TotNghiep
+            }).Distinct().ToList<object>();
+            }
+            else
             list = db.KetQuas.Where(p => p.MonHoc.TenMonHoc.Contains(MonHoc)
-            || (p.SinhVien.MaSinhVien.ToString().Contains(MaSinhVien)
+            && p.SinhVien.MaSinhVien.ToString().Contains(MaSinhVien)
             && p.SinhVien.TenSinhVien.Contains(TenSinhVien)
             && p.SinhVien.lops.TenLop.Contains(TenLop)
             && p.SinhVien.lops.Khoa.TenKhoa.Contains(TenKhoa)
-            && p.SinhVien.lops.ChuNhiem.TenGiaoVien.Contains(GVCN))).Select(p => new
+            && p.SinhVien.lops.ChuNhiem.TenGiaoVien.Contains(GVCN)).Select(p => new
             { p.SinhVien.MaSinhVien,
               p.SinhVien.TenSinhVien,
               p.SinhVien.GioiTinh,

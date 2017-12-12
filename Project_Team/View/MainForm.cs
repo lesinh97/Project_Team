@@ -30,7 +30,7 @@ namespace Project_Team
             BLL = new Manager_BLL();
             load_cB_Add();
             load_cB_Search();
-            dataGridView1.DataSource = BLL.Get_ListSV_BLL();
+            //dataGridView1.DataSource = BLL.Get_ListSV_BLL();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -120,21 +120,28 @@ namespace Project_Team
             cBSearchTenLop.DataSource = BLL.Get_ListLop_BLL();
             cBSearchTenLop.SelectedIndex = -1;
         }
-
+        public void SetSTT()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = i+1;
+            }
+        }
         private void bTSearch_Click(object sender, EventArgs e)
         {
             string MaSinhVien = txtSearchMaSinhVien.Text.Trim();
             string TenSinhVien = txtSearchTenSinhVien.Text.Trim();
-            string TenLop = cBSearchTenLop.SelectedIndex == -1 ? "@" : cBSearchTenLop.SelectedItem.ToString();
-            string TenKhoa = cBSearchTenKhoa.SelectedIndex == -1 ? "@" : cBSearchTenKhoa.SelectedItem.ToString();
-            string GVCN = cBSearchGVCN.SelectedIndex == -1 ? "@" : cBSearchGVCN.SelectedItem.ToString();
+            string TenLop = cBSearchTenLop.SelectedIndex == -1 ? "" : cBSearchTenLop.SelectedItem.ToString();
+            string TenKhoa = cBSearchTenKhoa.SelectedIndex == -1 ? "" : cBSearchTenKhoa.SelectedItem.ToString();
+            string GVCN = cBSearchGVCN.SelectedIndex == -1 ? "" : cBSearchGVCN.SelectedItem.ToString();
             string MonHoc = cBSearchTenMonHoc.SelectedIndex == -1 ? "@" : cBSearchTenMonHoc.SelectedItem.ToString();
             dataGridView1.DataSource= BLL.Search_SV_BLL(MaSinhVien, TenSinhVien, TenLop,TenKhoa,GVCN,MonHoc);
+            SetSTT();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            MaSinhVien_Edit = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            MaSinhVien_Edit = Int32.Parse(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
             //TenSinhVien_Edit = 
             MessageBox.Show("" + MaSinhVien_Edit);
         }
@@ -154,12 +161,13 @@ namespace Project_Team
             sv.NgaySinh = dTNgaySinh.Value;
             sv.QueQuan = cBQueQuan.SelectedItem.ToString();
             sv.GioiTinh = rBNam.Checked;
-            sv.NienKhoa = Int32.Parse(cBNienKhoa.SelectedItem.ToString());
+            sv.NienKhoa = Int32.Parse(cBNienKhoa.Text);
             sv.MaLop = BLL.Get_MaLop_BLL(cBTenLop.SelectedItem.ToString());
             sv.TotNghiep = false;
             if (BLL.Add_SV_BLL(sv)) MessageBox.Show("Đã thêm thành công");
             else MessageBox.Show("Sinh viên đã tồn tại");
             clear_tab_Add();
+            load_cB_Add();
         }
 
         private void pictureBox_Excel_Click(object sender, EventArgs e)

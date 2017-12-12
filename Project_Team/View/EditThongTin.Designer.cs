@@ -125,7 +125,6 @@
             // 
             this.cbNienKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbNienKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbNienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNienKhoa.FormattingEnabled = true;
             this.cbNienKhoa.Location = new System.Drawing.Point(140, 166);
             this.cbNienKhoa.Name = "cbNienKhoa";
