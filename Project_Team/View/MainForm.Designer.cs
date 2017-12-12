@@ -32,26 +32,23 @@
             this.TabControl_Main = new MaterialSkin.Controls.MaterialTabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Add = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Search = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Khac = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabAdd = new System.Windows.Forms.TabPage();
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cBTenLop = new System.Windows.Forms.ComboBox();
             this.btAdd = new System.Windows.Forms.Button();
-            this.cBTenGiaoVien = new System.Windows.Forms.ComboBox();
             this.cBTenKhoa = new System.Windows.Forms.ComboBox();
             this.cBNienKhoa = new System.Windows.Forms.ComboBox();
-            this.lbChuNhiem = new System.Windows.Forms.Label();
             this.lbNienKhoa = new System.Windows.Forms.Label();
             this.lbKhoa = new System.Windows.Forms.Label();
             this.lbLop = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btNext = new System.Windows.Forms.Button();
-            this.cBGioiTinh = new System.Windows.Forms.ComboBox();
+            this.rBNu = new System.Windows.Forms.RadioButton();
+            this.rBNam = new System.Windows.Forms.RadioButton();
             this.cBQueQuan = new System.Windows.Forms.ComboBox();
             this.dTNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtTenSinhVien = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -64,7 +61,7 @@
             this.tabSearch = new System.Windows.Forms.TabPage();
             this.btEditThongTin = new System.Windows.Forms.Button();
             this.btEditDiem = new System.Windows.Forms.Button();
-            this.cbSearchNienKhoa = new System.Windows.Forms.ComboBox();
+            this.cBSearchNienKhoa = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btClear = new System.Windows.Forms.Button();
@@ -83,21 +80,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabKhac = new System.Windows.Forms.TabPage();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox_Add_GV = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Add_Lop = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Add_Khoa = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.TabControl_Main.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Khac)).BeginInit();
             this.tabAdd.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,10 +102,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabKhac.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_GV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Lop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Khoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_Main
@@ -134,40 +130,34 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.pictureBox4);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.pictureBox_Add);
+            this.groupBox1.Controls.Add(this.pictureBox_Search);
+            this.groupBox1.Controls.Add(this.pictureBox_Khac);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBox_Add
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureBox_Add, "pictureBox_Add");
+            this.pictureBox_Add.Name = "pictureBox_Add";
+            this.pictureBox_Add.TabStop = false;
+            this.pictureBox_Add.Click += new System.EventHandler(this.pictureBox_Add_Click);
             // 
-            // pictureBox4
+            // pictureBox_Search
             // 
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
+            resources.ApplyResources(this.pictureBox_Search, "pictureBox_Search");
+            this.pictureBox_Search.Name = "pictureBox_Search";
+            this.pictureBox_Search.TabStop = false;
+            this.pictureBox_Search.Click += new System.EventHandler(this.pictureBox_Search_Click);
             // 
-            // pictureBox2
+            // pictureBox_Khac
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox3
-            // 
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
+            resources.ApplyResources(this.pictureBox_Khac, "pictureBox_Khac");
+            this.pictureBox_Khac.Name = "pictureBox_Khac";
+            this.pictureBox_Khac.TabStop = false;
+            this.pictureBox_Khac.Click += new System.EventHandler(this.pictureBox_Khac_Click);
             // 
             // label1
             // 
@@ -192,10 +182,8 @@
             // 
             this.groupBox3.Controls.Add(this.cBTenLop);
             this.groupBox3.Controls.Add(this.btAdd);
-            this.groupBox3.Controls.Add(this.cBTenGiaoVien);
             this.groupBox3.Controls.Add(this.cBTenKhoa);
             this.groupBox3.Controls.Add(this.cBNienKhoa);
-            this.groupBox3.Controls.Add(this.lbChuNhiem);
             this.groupBox3.Controls.Add(this.lbNienKhoa);
             this.groupBox3.Controls.Add(this.lbKhoa);
             this.groupBox3.Controls.Add(this.lbLop);
@@ -205,6 +193,8 @@
             // 
             // cBTenLop
             // 
+            this.cBTenLop.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cBTenLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBTenLop.FormattingEnabled = true;
             resources.ApplyResources(this.cBTenLop, "cBTenLop");
             this.cBTenLop.Name = "cBTenLop";
@@ -214,29 +204,25 @@
             resources.ApplyResources(this.btAdd, "btAdd");
             this.btAdd.Name = "btAdd";
             this.btAdd.UseVisualStyleBackColor = true;
-            // 
-            // cBTenGiaoVien
-            // 
-            this.cBTenGiaoVien.FormattingEnabled = true;
-            resources.ApplyResources(this.cBTenGiaoVien, "cBTenGiaoVien");
-            this.cBTenGiaoVien.Name = "cBTenGiaoVien";
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // cBTenKhoa
             // 
+            this.cBTenKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBTenKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBTenKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBTenKhoa.FormattingEnabled = true;
             resources.ApplyResources(this.cBTenKhoa, "cBTenKhoa");
             this.cBTenKhoa.Name = "cBTenKhoa";
             // 
             // cBNienKhoa
             // 
+            this.cBNienKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBNienKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBNienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBNienKhoa.FormattingEnabled = true;
             resources.ApplyResources(this.cBNienKhoa, "cBNienKhoa");
             this.cBNienKhoa.Name = "cBNienKhoa";
-            // 
-            // lbChuNhiem
-            // 
-            resources.ApplyResources(this.lbChuNhiem, "lbChuNhiem");
-            this.lbChuNhiem.Name = "lbChuNhiem";
             // 
             // lbNienKhoa
             // 
@@ -255,8 +241,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btNext);
-            this.groupBox2.Controls.Add(this.cBGioiTinh);
+            this.groupBox2.Controls.Add(this.rBNu);
+            this.groupBox2.Controls.Add(this.rBNam);
             this.groupBox2.Controls.Add(this.cBQueQuan);
             this.groupBox2.Controls.Add(this.dTNgaySinh);
             this.groupBox2.Controls.Add(this.txtTenSinhVien);
@@ -270,21 +256,91 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // btNext
+            // rBNu
             // 
-            resources.ApplyResources(this.btNext, "btNext");
-            this.btNext.Name = "btNext";
-            this.btNext.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rBNu, "rBNu");
+            this.rBNu.Name = "rBNu";
+            this.rBNu.TabStop = true;
+            this.rBNu.UseVisualStyleBackColor = true;
             // 
-            // cBGioiTinh
+            // rBNam
             // 
-            this.cBGioiTinh.FormattingEnabled = true;
-            resources.ApplyResources(this.cBGioiTinh, "cBGioiTinh");
-            this.cBGioiTinh.Name = "cBGioiTinh";
+            resources.ApplyResources(this.rBNam, "rBNam");
+            this.rBNam.Checked = true;
+            this.rBNam.Name = "rBNam";
+            this.rBNam.TabStop = true;
+            this.rBNam.UseVisualStyleBackColor = true;
             // 
             // cBQueQuan
             // 
+            this.cBQueQuan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBQueQuan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBQueQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBQueQuan.FormattingEnabled = true;
+            this.cBQueQuan.Items.AddRange(new object[] {
+            resources.GetString("cBQueQuan.Items"),
+            resources.GetString("cBQueQuan.Items1"),
+            resources.GetString("cBQueQuan.Items2"),
+            resources.GetString("cBQueQuan.Items3"),
+            resources.GetString("cBQueQuan.Items4"),
+            resources.GetString("cBQueQuan.Items5"),
+            resources.GetString("cBQueQuan.Items6"),
+            resources.GetString("cBQueQuan.Items7"),
+            resources.GetString("cBQueQuan.Items8"),
+            resources.GetString("cBQueQuan.Items9"),
+            resources.GetString("cBQueQuan.Items10"),
+            resources.GetString("cBQueQuan.Items11"),
+            resources.GetString("cBQueQuan.Items12"),
+            resources.GetString("cBQueQuan.Items13"),
+            resources.GetString("cBQueQuan.Items14"),
+            resources.GetString("cBQueQuan.Items15"),
+            resources.GetString("cBQueQuan.Items16"),
+            resources.GetString("cBQueQuan.Items17"),
+            resources.GetString("cBQueQuan.Items18"),
+            resources.GetString("cBQueQuan.Items19"),
+            resources.GetString("cBQueQuan.Items20"),
+            resources.GetString("cBQueQuan.Items21"),
+            resources.GetString("cBQueQuan.Items22"),
+            resources.GetString("cBQueQuan.Items23"),
+            resources.GetString("cBQueQuan.Items24"),
+            resources.GetString("cBQueQuan.Items25"),
+            resources.GetString("cBQueQuan.Items26"),
+            resources.GetString("cBQueQuan.Items27"),
+            resources.GetString("cBQueQuan.Items28"),
+            resources.GetString("cBQueQuan.Items29"),
+            resources.GetString("cBQueQuan.Items30"),
+            resources.GetString("cBQueQuan.Items31"),
+            resources.GetString("cBQueQuan.Items32"),
+            resources.GetString("cBQueQuan.Items33"),
+            resources.GetString("cBQueQuan.Items34"),
+            resources.GetString("cBQueQuan.Items35"),
+            resources.GetString("cBQueQuan.Items36"),
+            resources.GetString("cBQueQuan.Items37"),
+            resources.GetString("cBQueQuan.Items38"),
+            resources.GetString("cBQueQuan.Items39"),
+            resources.GetString("cBQueQuan.Items40"),
+            resources.GetString("cBQueQuan.Items41"),
+            resources.GetString("cBQueQuan.Items42"),
+            resources.GetString("cBQueQuan.Items43"),
+            resources.GetString("cBQueQuan.Items44"),
+            resources.GetString("cBQueQuan.Items45"),
+            resources.GetString("cBQueQuan.Items46"),
+            resources.GetString("cBQueQuan.Items47"),
+            resources.GetString("cBQueQuan.Items48"),
+            resources.GetString("cBQueQuan.Items49"),
+            resources.GetString("cBQueQuan.Items50"),
+            resources.GetString("cBQueQuan.Items51"),
+            resources.GetString("cBQueQuan.Items52"),
+            resources.GetString("cBQueQuan.Items53"),
+            resources.GetString("cBQueQuan.Items54"),
+            resources.GetString("cBQueQuan.Items55"),
+            resources.GetString("cBQueQuan.Items56"),
+            resources.GetString("cBQueQuan.Items57"),
+            resources.GetString("cBQueQuan.Items58"),
+            resources.GetString("cBQueQuan.Items59"),
+            resources.GetString("cBQueQuan.Items60"),
+            resources.GetString("cBQueQuan.Items61"),
+            resources.GetString("cBQueQuan.Items62")});
             resources.ApplyResources(this.cBQueQuan, "cBQueQuan");
             this.cBQueQuan.Name = "cBQueQuan";
             // 
@@ -350,7 +406,7 @@
             this.tabSearch.BackColor = System.Drawing.Color.White;
             this.tabSearch.Controls.Add(this.btEditThongTin);
             this.tabSearch.Controls.Add(this.btEditDiem);
-            this.tabSearch.Controls.Add(this.cbSearchNienKhoa);
+            this.tabSearch.Controls.Add(this.cBSearchNienKhoa);
             this.tabSearch.Controls.Add(this.label9);
             this.tabSearch.Controls.Add(this.groupBox4);
             this.tabSearch.Controls.Add(this.label2);
@@ -372,11 +428,14 @@
             this.btEditDiem.UseVisualStyleBackColor = true;
             this.btEditDiem.Click += new System.EventHandler(this.btEditDiem_Click);
             // 
-            // cbSearchNienKhoa
+            // cBSearchNienKhoa
             // 
-            this.cbSearchNienKhoa.FormattingEnabled = true;
-            resources.ApplyResources(this.cbSearchNienKhoa, "cbSearchNienKhoa");
-            this.cbSearchNienKhoa.Name = "cbSearchNienKhoa";
+            this.cBSearchNienKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBSearchNienKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBSearchNienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBSearchNienKhoa.FormattingEnabled = true;
+            resources.ApplyResources(this.cBSearchNienKhoa, "cBSearchNienKhoa");
+            this.cBSearchNienKhoa.Name = "cBSearchNienKhoa";
             // 
             // label9
             // 
@@ -408,33 +467,47 @@
             resources.ApplyResources(this.btClear, "btClear");
             this.btClear.Name = "btClear";
             this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
             // 
             // bTSearch
             // 
             resources.ApplyResources(this.bTSearch, "bTSearch");
             this.bTSearch.Name = "bTSearch";
             this.bTSearch.UseVisualStyleBackColor = true;
+            this.bTSearch.Click += new System.EventHandler(this.bTSearch_Click);
             // 
             // cBSearchTenMonHoc
             // 
+            this.cBSearchTenMonHoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBSearchTenMonHoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBSearchTenMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBSearchTenMonHoc.FormattingEnabled = true;
             resources.ApplyResources(this.cBSearchTenMonHoc, "cBSearchTenMonHoc");
             this.cBSearchTenMonHoc.Name = "cBSearchTenMonHoc";
             // 
             // cBSearchGVCN
             // 
+            this.cBSearchGVCN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBSearchGVCN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBSearchGVCN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBSearchGVCN.FormattingEnabled = true;
             resources.ApplyResources(this.cBSearchGVCN, "cBSearchGVCN");
             this.cBSearchGVCN.Name = "cBSearchGVCN";
             // 
             // cBSearchTenKhoa
             // 
+            this.cBSearchTenKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBSearchTenKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBSearchTenKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBSearchTenKhoa.FormattingEnabled = true;
             resources.ApplyResources(this.cBSearchTenKhoa, "cBSearchTenKhoa");
             this.cBSearchTenKhoa.Name = "cBSearchTenKhoa";
             // 
             // cBSearchTenLop
             // 
+            this.cBSearchTenLop.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBSearchTenLop.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBSearchTenLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBSearchTenLop.FormattingEnabled = true;
             resources.ApplyResources(this.cBSearchTenLop, "cBSearchTenLop");
             this.cBSearchTenLop.Name = "cBSearchTenLop";
@@ -506,14 +579,7 @@
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.TabControl_Main;
-            this.materialTabSelector1.Depth = 0;
-            resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // tabKhac
             // 
@@ -523,48 +589,57 @@
             resources.ApplyResources(this.tabKhac, "tabKhac");
             this.tabKhac.Name = "tabKhac";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.pictureBox5);
-            this.groupBox5.Controls.Add(this.pictureBox6);
-            this.groupBox5.Controls.Add(this.pictureBox7);
-            this.groupBox5.Controls.Add(this.pictureBox8);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox6
-            // 
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // pictureBox8
-            // 
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.pictureBox_Add_GV);
+            this.groupBox5.Controls.Add(this.pictureBox_Add_Lop);
+            this.groupBox5.Controls.Add(this.pictureBox_Add_Khoa);
+            this.groupBox5.Controls.Add(this.pictureBox_Excel);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // pictureBox_Add_GV
+            // 
+            this.pictureBox_Add_GV.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureBox_Add_GV, "pictureBox_Add_GV");
+            this.pictureBox_Add_GV.Name = "pictureBox_Add_GV";
+            this.pictureBox_Add_GV.TabStop = false;
+            this.pictureBox_Add_GV.Click += new System.EventHandler(this.pictureBox_Add_GV_Click);
+            // 
+            // pictureBox_Add_Lop
+            // 
+            resources.ApplyResources(this.pictureBox_Add_Lop, "pictureBox_Add_Lop");
+            this.pictureBox_Add_Lop.Name = "pictureBox_Add_Lop";
+            this.pictureBox_Add_Lop.TabStop = false;
+            this.pictureBox_Add_Lop.Click += new System.EventHandler(this.pictureBox_Add_Lop_Click);
+            // 
+            // pictureBox_Add_Khoa
+            // 
+            resources.ApplyResources(this.pictureBox_Add_Khoa, "pictureBox_Add_Khoa");
+            this.pictureBox_Add_Khoa.Name = "pictureBox_Add_Khoa";
+            this.pictureBox_Add_Khoa.TabStop = false;
+            this.pictureBox_Add_Khoa.Click += new System.EventHandler(this.pictureBox_Add_Khoa_Click);
+            // 
+            // pictureBox_Excel
+            // 
+            resources.ApplyResources(this.pictureBox_Excel, "pictureBox_Excel");
+            this.pictureBox_Excel.Name = "pictureBox_Excel";
+            this.pictureBox_Excel.TabStop = false;
+            this.pictureBox_Excel.Click += new System.EventHandler(this.pictureBox_Excel_Click);
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.TabControl_Main;
+            this.materialTabSelector1.Depth = 0;
+            resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
             // 
             // MainForm
             // 
@@ -580,10 +655,9 @@
             this.tabHome.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Khac)).EndInit();
             this.tabAdd.ResumeLayout(false);
             this.tabAdd.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -599,10 +673,10 @@
             this.tabKhac.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_GV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Lop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Khoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,10 +688,9 @@
         private System.Windows.Forms.TabPage tabAdd;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox_Add;
+        private System.Windows.Forms.PictureBox pictureBox_Khac;
+        private System.Windows.Forms.PictureBox pictureBox_Search;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabSearch;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -627,20 +700,16 @@
         private System.Windows.Forms.Label lbQueQuan;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label lbMSSV;
-        private System.Windows.Forms.ComboBox cBGioiTinh;
         private System.Windows.Forms.ComboBox cBQueQuan;
         private System.Windows.Forms.DateTimePicker dTNgaySinh;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTenSinhVien;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtMaSinhVien;
-        private System.Windows.Forms.Label lbChuNhiem;
         private System.Windows.Forms.Label lbNienKhoa;
         private System.Windows.Forms.Label lbKhoa;
         private System.Windows.Forms.Label lbLop;
-        private System.Windows.Forms.ComboBox cBTenGiaoVien;
         private System.Windows.Forms.ComboBox cBTenKhoa;
         private System.Windows.Forms.ComboBox cBNienKhoa;
         private System.Windows.Forms.Label lbTieuDe;
-        private System.Windows.Forms.Button btNext;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -658,7 +727,7 @@
         private System.Windows.Forms.ComboBox cBSearchTenKhoa;
         private System.Windows.Forms.ComboBox cBSearchTenLop;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbSearchNienKhoa;
+        private System.Windows.Forms.ComboBox cBSearchNienKhoa;
         private System.Windows.Forms.Button bTSearch;
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.Button btEditThongTin;
@@ -667,9 +736,11 @@
         private System.Windows.Forms.TabPage tabKhac;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox_Add_GV;
+        private System.Windows.Forms.PictureBox pictureBox_Add_Lop;
+        private System.Windows.Forms.PictureBox pictureBox_Add_Khoa;
+        private System.Windows.Forms.PictureBox pictureBox_Excel;
+        private System.Windows.Forms.RadioButton rBNu;
+        private System.Windows.Forms.RadioButton rBNam;
     }
 }

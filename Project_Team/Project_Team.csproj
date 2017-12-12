@@ -108,6 +108,12 @@
     <Compile Include="View\EditThongTin.Designer.cs">
       <DependentUpon>EditThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Excel.Designer.cs">
+      <DependentUpon>Excel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EditThongTin.resx">
       <DependentUpon>EditThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Excel.resx">
+      <DependentUpon>Excel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

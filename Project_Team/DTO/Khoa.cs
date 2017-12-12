@@ -14,6 +14,7 @@ namespace Project_Team
         [Required]
         public string TenKhoa { get; set; }
         public virtual ICollection<Lop> Lops { get; set; }
+       // public virtual ICollection<ChuNhiem> ChuNhiems { get; set; }
         public Khoa()
         {
             

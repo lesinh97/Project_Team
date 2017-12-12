@@ -12,12 +12,11 @@ namespace Project_Team
 {
     public partial class AddLop : MaterialSkin.Controls.MaterialForm
     {
-        public delegate bool ALop(Lop lop);
-        public ALop add;
         public AddLop()
         {
             InitializeComponent();
-            loadTenKhoa();
+            loadMaKhoa();
+            loadMaGV();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -26,15 +25,43 @@ namespace Project_Team
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
         }
-        public void loadTenKhoa()
+        public void loadMaKhoa()
         {
-          
+            cBMaKhoa.DataSource = MainForm.BLL.Get_ListMaKhoa_BLL();
 
         }
-        public void loadGV()
+        public void loadMaGV()
         {
+            cBMaGV.DataSource = MainForm.BLL.Get_ListMaChuNhiem_BLL();
+        }
+
+        public void text_Clear()
+        {
+            txtMaLop.Text = "";
+            txtTenLop.Text = "";
+        }
+
+        private void btOk_Click(object sender, EventArgs e)
+        {
+            Lop lopMoi = new Lop();
+            lopMoi.MaLop = txtMaLop.Text;
+            lopMoi.TenLop = txtTenLop.Text;
+            lopMoi.MaKhoa = cBMaKhoa.SelectedItem.ToString();
+            lopMoi.MaGiaoVien = cBMaGV.SelectedItem.ToString();
+            if (MainForm.BLL.Add_Lop_BLL(lopMoi)) MessageBox.Show("Thêm lớp thành công");
+            else MessageBox.Show("Đã có lớp này");
+            text_Clear();
 
         }
 
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            text_Clear();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

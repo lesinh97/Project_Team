@@ -12,8 +12,6 @@ namespace Project_Team
 {
     public partial class AddKhoa : MaterialSkin.Controls.MaterialForm
     {
-        public delegate bool AKhoa(Khoa khoaMoi);
-        public AKhoa add;
         public AddKhoa()
         {
             InitializeComponent();
@@ -26,12 +24,30 @@ namespace Project_Team
                 TextShade.WHITE);
         }
 
+        public void text_Clear()
+        {
+            txtMaKhoa.Text = "";
+            txtTenKhoa.Text = "";
+        }
+
         private void btOk_Click(object sender, EventArgs e)
         {
             Khoa khoaMoi = new Khoa();
             khoaMoi.MaKhoa = txtMaKhoa.Text;
             khoaMoi.TenKhoa = txtTenKhoa.Text;
-            add.Invoke(khoaMoi);
+            if (MainForm.BLL.Add_Khoa_BLL(khoaMoi) == false) MessageBox.Show("Đã có khoa này");
+            else MessageBox.Show("Thêm khoa thành công");
+            text_Clear();
+        }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            text_Clear();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

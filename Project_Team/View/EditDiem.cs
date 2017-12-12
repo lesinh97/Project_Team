@@ -13,13 +13,13 @@ namespace Project_Team
 {
     public partial class EditDiem : MaterialSkin.Controls.MaterialForm
     {
-        public delegate void Diem(KetQua s);
-        public Diem ed1;
-        public EditDiem()
+        public int MaSinhVien { get; set; }
+        public EditDiem(int mssv)
         {
             InitializeComponent();
-            loadTenMonHoc();
-            loadTenSinhVien();
+            MaSinhVien = mssv;
+            loadMaMonHoc();
+            setThongTin(MaSinhVien);
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -28,21 +28,47 @@ namespace Project_Team
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
         }
-        public void loadTenSinhVien()
+        public void setThongTin(int ms)
         {
-
+            txtMaSinhVien.Text = ""+ms;
+            txtTenSinhVien.Text = MainForm.BLL.Get_SV_BLL(ms).TenSinhVien;
         }
-        public void loadTenMonHoc()
+        public void loadMaMonHoc()
         {
-
+            cBMaMonHoc.DataSource = MainForm.BLL.Get_ListMaMonHoc_BLL(MaSinhVien);
         }
-        private void btEditOk_Click(object sender, EventArgs e)
+        private void cBMaMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getDiem();
+        }
+        public void getDiem()
+        {
+            string MaMonHoc = cBMaMonHoc.SelectedItem.ToString();
+            KetQua kq = MainForm.BLL.Get_MotKetQua_BLL(MaMonHoc, MaSinhVien);
+            tBDiemCC.Text = kq.DiemBaiTap.ToString();
+            tBDiemGK.Text = kq.DiemGiuaKi.ToString();
+            tBDiemCK.Text = kq.DiemCuoiKi.ToString();
+        }
+        private void btOk_Click(object sender, EventArgs e)
         {
             KetQua kq = new KetQua();
+            kq.MaSinhVien = 1;
+            kq.MaMonHoc = cBMaMonHoc.SelectedItem.ToString();
             kq.DiemBaiTap = Double.Parse(tBDiemCC.Text);
             kq.DiemGiuaKi = Double.Parse(tBDiemGK.Text);
             kq.DiemCuoiKi = Double.Parse(tBDiemCK.Text);
-            ed1.Invoke(kq);
-    }
+            MainForm.BLL.Edit_Diem_BLL(kq);
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            getDiem();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+ 
     }
 }

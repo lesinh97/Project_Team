@@ -12,8 +12,6 @@ namespace Project_Team
 {
     public partial class AddGiaoVien : MaterialSkin.Controls.MaterialForm
     {
-        public delegate bool CNhiem(ChuNhiem giaoVien);
-        public  CNhiem add;
         public AddGiaoVien()
         {
             InitializeComponent();
@@ -25,13 +23,31 @@ namespace Project_Team
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
         }
+        public void text_Clear()
+        {
+            txtMaGiaoVien.Text = "";
+            txtTenGiaoVien.Text = "";
+        }
 
         private void btOk_Click(object sender, EventArgs e)
         {
             ChuNhiem giaoVien = new ChuNhiem();
             giaoVien.MaGiaoVien = txtMaGiaoVien.Text;
             giaoVien.TenGiaoVien = txtTenGiaoVien.Text;
-            add.Invoke(giaoVien);
+            if (MainForm.BLL.Add_GiaoVien_BLL(giaoVien)) MessageBox.Show("Thêm giáo viên thành công");
+            else MessageBox.Show("Đã có giáo viên này");
+            text_Clear();
         }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            text_Clear();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+ 
     }
 }

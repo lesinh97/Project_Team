@@ -27,7 +27,7 @@ namespace Project_Team
         public virtual DbSet<KetQua> KetQuas { get; set; }
         public virtual DbSet<Users> Userses { get; set; }
 
-        public class Initializer : CreateDatabaseIfNotExists<Manager>
+        public class Initializer : DropCreateDatabaseIfModelChanges<Manager>
         {
             protected override void Seed(Manager context)
             {
