@@ -33,9 +33,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cBMaMonHoc = new System.Windows.Forms.ComboBox();
-            this.tBDiemCC = new System.Windows.Forms.TextBox();
-            this.tBDiemGK = new System.Windows.Forms.TextBox();
-            this.tBDiemCK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenSinhVien = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btOk = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -43,6 +40,12 @@
             this.btReset = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtMaSinhVien = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label1 = new System.Windows.Forms.Label();
+            this.numbChuyenCan = new System.Windows.Forms.NumericUpDown();
+            this.numbGiuaKi = new System.Windows.Forms.NumericUpDown();
+            this.numbCuoiKi = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numbChuyenCan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbGiuaKi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbCuoiKi)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -96,35 +99,11 @@
             this.cBMaMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBMaMonHoc.FormattingEnabled = true;
             this.cBMaMonHoc.Location = new System.Drawing.Point(131, 128);
-            this.cBMaMonHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBMaMonHoc.Margin = new System.Windows.Forms.Padding(2);
             this.cBMaMonHoc.Name = "cBMaMonHoc";
-            this.cBMaMonHoc.Size = new System.Drawing.Size(146, 21);
+            this.cBMaMonHoc.Size = new System.Drawing.Size(194, 21);
             this.cBMaMonHoc.TabIndex = 7;
             this.cBMaMonHoc.SelectedIndexChanged += new System.EventHandler(this.cBMaMonHoc_SelectedIndexChanged);
-            // 
-            // tBDiemCC
-            // 
-            this.tBDiemCC.Location = new System.Drawing.Point(54, 184);
-            this.tBDiemCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tBDiemCC.Name = "tBDiemCC";
-            this.tBDiemCC.Size = new System.Drawing.Size(68, 20);
-            this.tBDiemCC.TabIndex = 8;
-            // 
-            // tBDiemGK
-            // 
-            this.tBDiemGK.Location = new System.Drawing.Point(160, 184);
-            this.tBDiemGK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tBDiemGK.Name = "tBDiemGK";
-            this.tBDiemGK.Size = new System.Drawing.Size(68, 20);
-            this.tBDiemGK.TabIndex = 9;
-            // 
-            // tBDiemCK
-            // 
-            this.tBDiemCK.Location = new System.Drawing.Point(267, 184);
-            this.tBDiemCK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tBDiemCK.Name = "tBDiemCK";
-            this.tBDiemCK.Size = new System.Drawing.Size(68, 20);
-            this.tBDiemCK.TabIndex = 10;
             // 
             // label2
             // 
@@ -143,7 +122,7 @@
             this.txtTenSinhVien.Depth = 0;
             this.txtTenSinhVien.Hint = "";
             this.txtTenSinhVien.Location = new System.Drawing.Point(131, 98);
-            this.txtTenSinhVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenSinhVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenSinhVien.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTenSinhVien.Name = "txtTenSinhVien";
             this.txtTenSinhVien.PasswordChar = '\0';
@@ -158,7 +137,7 @@
             // 
             this.btOk.Depth = 0;
             this.btOk.Location = new System.Drawing.Point(54, 220);
-            this.btOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btOk.Margin = new System.Windows.Forms.Padding(2);
             this.btOk.MouseState = MaterialSkin.MouseState.HOVER;
             this.btOk.Name = "btOk";
             this.btOk.Primary = true;
@@ -172,7 +151,7 @@
             // 
             this.btThoat.Depth = 0;
             this.btThoat.Location = new System.Drawing.Point(271, 220);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btThoat.MouseState = MaterialSkin.MouseState.HOVER;
             this.btThoat.Name = "btThoat";
             this.btThoat.Primary = true;
@@ -187,7 +166,7 @@
             this.btReset.BackColor = System.Drawing.SystemColors.Control;
             this.btReset.Depth = 0;
             this.btReset.Location = new System.Drawing.Point(182, 220);
-            this.btReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btReset.Margin = new System.Windows.Forms.Padding(2);
             this.btReset.MouseState = MaterialSkin.MouseState.HOVER;
             this.btReset.Name = "btReset";
             this.btReset.Primary = true;
@@ -203,7 +182,7 @@
             this.txtMaSinhVien.Depth = 0;
             this.txtMaSinhVien.Hint = "";
             this.txtMaSinhVien.Location = new System.Drawing.Point(131, 65);
-            this.txtMaSinhVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaSinhVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaSinhVien.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.PasswordChar = '\0';
@@ -225,11 +204,68 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Mã sinh viên";
             // 
+            // numbChuyenCan
+            // 
+            this.numbChuyenCan.DecimalPlaces = 1;
+            this.numbChuyenCan.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numbChuyenCan.Location = new System.Drawing.Point(54, 177);
+            this.numbChuyenCan.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numbChuyenCan.Name = "numbChuyenCan";
+            this.numbChuyenCan.Size = new System.Drawing.Size(68, 20);
+            this.numbChuyenCan.TabIndex = 19;
+            // 
+            // numbGiuaKi
+            // 
+            this.numbGiuaKi.DecimalPlaces = 1;
+            this.numbGiuaKi.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numbGiuaKi.Location = new System.Drawing.Point(160, 177);
+            this.numbGiuaKi.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numbGiuaKi.Name = "numbGiuaKi";
+            this.numbGiuaKi.Size = new System.Drawing.Size(71, 20);
+            this.numbGiuaKi.TabIndex = 20;
+            // 
+            // numbCuoiKi
+            // 
+            this.numbCuoiKi.DecimalPlaces = 1;
+            this.numbCuoiKi.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numbCuoiKi.Location = new System.Drawing.Point(268, 177);
+            this.numbCuoiKi.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numbCuoiKi.Name = "numbCuoiKi";
+            this.numbCuoiKi.Size = new System.Drawing.Size(66, 20);
+            this.numbCuoiKi.TabIndex = 21;
+            // 
             // EditDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 283);
+            this.Controls.Add(this.numbCuoiKi);
+            this.Controls.Add(this.numbGiuaKi);
+            this.Controls.Add(this.numbChuyenCan);
             this.Controls.Add(this.txtMaSinhVien);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btReset);
@@ -237,17 +273,17 @@
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.txtTenSinhVien);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tBDiemCK);
-            this.Controls.Add(this.tBDiemGK);
-            this.Controls.Add(this.tBDiemCC);
             this.Controls.Add(this.cBMaMonHoc);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditDiem";
             this.Text = "Chỉnh sửa điểm";
+            ((System.ComponentModel.ISupportInitialize)(this.numbChuyenCan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbGiuaKi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbCuoiKi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,9 +295,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cBMaMonHoc;
-        private System.Windows.Forms.TextBox tBDiemCC;
-        private System.Windows.Forms.TextBox tBDiemGK;
-        private System.Windows.Forms.TextBox tBDiemCK;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTenSinhVien;
         private MaterialSkin.Controls.MaterialRaisedButton btOk;
@@ -269,5 +302,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btReset;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtMaSinhVien;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numbChuyenCan;
+        private System.Windows.Forms.NumericUpDown numbGiuaKi;
+        private System.Windows.Forms.NumericUpDown numbCuoiKi;
     }
 }

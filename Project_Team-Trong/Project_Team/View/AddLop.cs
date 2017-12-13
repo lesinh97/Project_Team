@@ -50,7 +50,7 @@ namespace Project_Team
             else
             {
                 Lop lopMoi = new Lop();
-                lopMoi.MaLop = txtMaLop.Text;
+                lopMoi.MaLop = "L_" + cBMaKhoa + "_" + txtMaLop.Text;
                 lopMoi.TenLop = txtTenLop.Text;
                 lopMoi.MaKhoa = cBMaKhoa.SelectedItem.ToString();
                 lopMoi.MaGiaoVien = cBMaGV.SelectedItem.ToString();

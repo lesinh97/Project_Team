@@ -80,14 +80,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabKhac = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox_Add_GV = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Add_Lop = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Add_Khoa = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +89,14 @@
             this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotNghiep = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabKhac = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox_Add_GV = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Add_Lop = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Add_Khoa = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.TabControl_Main.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -597,6 +597,59 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
+            // STT
+            // 
+            resources.ApplyResources(this.STT, "STT");
+            this.STT.Name = "STT";
+            // 
+            // MaSinhVien
+            // 
+            this.MaSinhVien.DataPropertyName = "MaSinhVien";
+            resources.ApplyResources(this.MaSinhVien, "MaSinhVien");
+            this.MaSinhVien.Name = "MaSinhVien";
+            // 
+            // TenSinhVien
+            // 
+            this.TenSinhVien.DataPropertyName = "TenSinhVien";
+            resources.ApplyResources(this.TenSinhVien, "TenSinhVien");
+            this.TenSinhVien.Name = "TenSinhVien";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            resources.ApplyResources(this.GioiTinh, "GioiTinh");
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            resources.ApplyResources(this.NgaySinh, "NgaySinh");
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // QueQuan
+            // 
+            this.QueQuan.DataPropertyName = "QueQuan";
+            resources.ApplyResources(this.QueQuan, "QueQuan");
+            this.QueQuan.Name = "QueQuan";
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            resources.ApplyResources(this.TenLop, "TenLop");
+            this.TenLop.Name = "TenLop";
+            // 
+            // TenKhoa
+            // 
+            this.TenKhoa.DataPropertyName = "TenKhoa";
+            resources.ApplyResources(this.TenKhoa, "TenKhoa");
+            this.TenKhoa.Name = "TenKhoa";
+            // 
+            // TotNghiep
+            // 
+            this.TotNghiep.DataPropertyName = "TotNghiep";
+            resources.ApplyResources(this.TotNghiep, "TotNghiep");
+            this.TotNghiep.Name = "TotNghiep";
+            // 
             // tabKhac
             // 
             this.tabKhac.BackColor = System.Drawing.Color.White;
@@ -656,59 +709,6 @@
             resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            // 
-            // STT
-            // 
-            resources.ApplyResources(this.STT, "STT");
-            this.STT.Name = "STT";
-            // 
-            // MaSinhVien
-            // 
-            this.MaSinhVien.DataPropertyName = "MaSinhVien";
-            resources.ApplyResources(this.MaSinhVien, "MaSinhVien");
-            this.MaSinhVien.Name = "MaSinhVien";
-            // 
-            // TenSinhVien
-            // 
-            this.TenSinhVien.DataPropertyName = "TenSinhVien";
-            resources.ApplyResources(this.TenSinhVien, "TenSinhVien");
-            this.TenSinhVien.Name = "TenSinhVien";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            resources.ApplyResources(this.GioiTinh, "GioiTinh");
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            resources.ApplyResources(this.NgaySinh, "NgaySinh");
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // QueQuan
-            // 
-            this.QueQuan.DataPropertyName = "QueQuan";
-            resources.ApplyResources(this.QueQuan, "QueQuan");
-            this.QueQuan.Name = "QueQuan";
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            resources.ApplyResources(this.TenLop, "TenLop");
-            this.TenLop.Name = "TenLop";
-            // 
-            // TenKhoa
-            // 
-            this.TenKhoa.DataPropertyName = "TenKhoa";
-            resources.ApplyResources(this.TenKhoa, "TenKhoa");
-            this.TenKhoa.Name = "TenKhoa";
-            // 
-            // TotNghiep
-            // 
-            this.TotNghiep.DataPropertyName = "TotNghiep";
-            resources.ApplyResources(this.TotNghiep, "TotNghiep");
-            this.TotNghiep.Name = "TotNghiep";
             // 
             // MainForm
             // 

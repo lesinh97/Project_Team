@@ -10,7 +10,7 @@ namespace Project_Team
 {
     public class SinhVien
     {
-        [Key]
+        [Key][DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaSinhVien { get; set; }
         [Required]
         public string MaLop { get; set; }

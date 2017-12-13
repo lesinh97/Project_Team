@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using MaterialSkin;
 namespace Project_Team
 {
-    public partial class AddGiaoVien : MaterialSkin.Controls.MaterialForm
+    public partial class AddMonHoc : MaterialSkin.Controls.MaterialForm
     {
-        public AddGiaoVien()
+        public AddMonHoc()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -22,17 +22,17 @@ namespace Project_Team
                 Primary.Blue400, Primary.Blue500,
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
-            LoadMaKhoa();
-            
         }
-        private void LoadMaKhoa()
+
+        private void btClear_Click(object sender, EventArgs e)
         {
-            cbMaKhoa.DataSource = MainForm.BLL.Get_ListMaKhoa_BLL();
+            txtMaMonHoc.Clear();
+            txtTenMonHoc.Clear();
         }
-        public void text_Clear()
+
+        private void btCancel_Click(object sender, EventArgs e)
         {
-            txtMaGiaoVien.Text = "";
-            txtTenGiaoVien.Text = "";
+            this.Close();
         }
 
         private void btOk_Click(object sender, EventArgs e)
@@ -43,31 +43,27 @@ namespace Project_Team
             }
             else
             {
-                ChuNhiem giaoVien = new ChuNhiem();
-                giaoVien.MaGiaoVien = txtGV.Text + cbMaKhoa.Text + "_" + txtMaGiaoVien.Text;
-                giaoVien.TenGiaoVien = txtTenGiaoVien.Text;
-                if (MainForm.BLL.Add_GiaoVien_BLL(giaoVien)) MessageBox.Show("Thêm giáo viên thành công");
-                else MessageBox.Show("Đã có giáo viên này");
-                text_Clear();
+                MonHoc monHoc = new MonHoc
+                {
+                    MaMonHoc = txtMaMonHoc.Text,
+                    TenMonHoc = txtTenMonHoc.Text,
+                    TinChi = Convert.ToInt32(numbTinChi.Value)
+                };
+                if (MainForm.BLL.Add_MonHoc_BLL(monHoc))
+                {
+                    MessageBox.Show("Thêm môn học thành công");
+                }
+                else MessageBox.Show("Đã có môn học này");
             }
         }
 
-        private void btClear_Click(object sender, EventArgs e)
-        {
-            text_Clear();
-        }
-
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        
         private bool ThieuThongTin()
         {
-            if (string.IsNullOrWhiteSpace(txtMaGiaoVien.Text) || string.IsNullOrWhiteSpace(txtTenGiaoVien.Text))
+            if (string.IsNullOrWhiteSpace(txtMaMonHoc.Text) || string.IsNullOrWhiteSpace(txtTenMonHoc.Text))
             {
                 return true;
             }
+
             else return false;
         }
     }
