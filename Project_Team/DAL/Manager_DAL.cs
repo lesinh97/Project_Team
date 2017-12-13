@@ -415,42 +415,71 @@ namespace Project_Team
             SinhVien sv = db.SinhViens.Where(p => p.MaSinhVien == MaSinhVien).Single();
             return sv;
         }
-        public List<object> Search_SV_DAL(string MaSinhVien, string TenSinhVien, string TenLop, string TenKhoa, string GVCN, string MonHoc)
+        public List<SinhVien> Search_SV_DAL(string MaSinhVien, string TenSinhVien, string TenLop, string TenKhoa, string GVCN, string MonHoc)
         {
-            List<object> list = new List<object>();
-            //var r = db.SinhViens.Join(db.KetQuas, p => p.MaSinhVien, k => k.MaSinhVien, (p, k) => k).Where(k => k.MonHoc.MaMonHoc.Contains(MonHoc));
-            if(MonHoc.Contains("@")) {
-                list = db.SinhViens.Where(p => (p.MaSinhVien.ToString().Contains(MaSinhVien)
+            List<SinhVien> list = new List<SinhVien>();
+            if (MonHoc.Contains("@"))
+            {
+                var s = db.SinhViens.Where(p => (p.MaSinhVien.ToString().Contains(MaSinhVien)
             && p.TenSinhVien.Contains(TenSinhVien)
             && p.lops.TenLop.Contains(TenLop)
             && p.lops.Khoa.TenKhoa.Contains(TenKhoa)
-            && p.lops.ChuNhiem.TenGiaoVien.Contains(GVCN))).Select(p => new
-            { p.MaSinhVien,
-              p.TenSinhVien,
-              p.GioiTinh,
-              p.NgaySinh,
-              p.QueQuan,
-              p.lops.TenLop,
-              p.lops.Khoa.TenKhoa,
-              p.TotNghiep
-            }).Distinct().ToList<object>();
+            && p.lops.ChuNhiem.TenGiaoVien.Contains(GVCN))).Select(p => p).Distinct();
+                foreach (var i in s)
+                {
+                    SinhVien sv = new SinhVien();
+                    sv.MaSinhVien = i.MaSinhVien;
+                    sv.TenSinhVien = i.TenSinhVien;
+                    sv.GioiTinh = i.GioiTinh;
+                    sv.NgaySinh = i.NgaySinh;
+                    sv.QueQuan = i.QueQuan;
+                    sv.MaLop = i.MaLop;
+                    sv.TotNghiep = i.TotNghiep;
+                    sv.NienKhoa = i.NienKhoa;
+                    list.Add(sv);
+                }
             }
             else
-            list = db.KetQuas.Where(p => p.MonHoc.TenMonHoc.Contains(MonHoc)
-            && p.SinhVien.MaSinhVien.ToString().Contains(MaSinhVien)
-            && p.SinhVien.TenSinhVien.Contains(TenSinhVien)
-            && p.SinhVien.lops.TenLop.Contains(TenLop)
-            && p.SinhVien.lops.Khoa.TenKhoa.Contains(TenKhoa)
-            && p.SinhVien.lops.ChuNhiem.TenGiaoVien.Contains(GVCN)).Select(p => new
-            { p.SinhVien.MaSinhVien,
-              p.SinhVien.TenSinhVien,
-              p.SinhVien.GioiTinh,
-              p.SinhVien.NgaySinh,
-              p.SinhVien.QueQuan,
-              p.SinhVien.lops.TenLop,
-              p.SinhVien.lops.Khoa.TenKhoa,
-              p.SinhVien.TotNghiep}).Distinct().ToList<object>();
-            return list;
+            {
+                var s = db.KetQuas.Where(p => p.MonHoc.TenMonHoc.Contains(MonHoc)
+                && p.SinhVien.MaSinhVien.ToString().Contains(MaSinhVien)
+                && p.SinhVien.TenSinhVien.Contains(TenSinhVien)
+                && p.SinhVien.lops.TenLop.Contains(TenLop)
+                && p.SinhVien.lops.Khoa.TenKhoa.Contains(TenKhoa)
+                && p.SinhVien.lops.ChuNhiem.TenGiaoVien.Contains(GVCN)).Select(p => p).Distinct();
+                foreach (var i in s)
+                {
+                    SinhVien sv = new SinhVien();
+                    sv.MaSinhVien = i.MaSinhVien;
+                    sv.TenSinhVien = i.SinhVien.TenSinhVien;
+                    sv.GioiTinh = i.SinhVien.GioiTinh;
+                    sv.NgaySinh = i.SinhVien.NgaySinh;
+                    sv.QueQuan = i.SinhVien.QueQuan;
+                    sv.MaLop = i.SinhVien.MaLop;
+                    sv.TotNghiep = i.SinhVien.TotNghiep;
+                    sv.NienKhoa = i.SinhVien.NienKhoa;
+                    list.Add(sv);
+                }
+            }
+            /*var s = db.SinhViens.Where(p => (p.MaSinhVien.ToString().Contains(MaSinhVien)
+            && p.TenSinhVien.Contains(TenSinhVien)
+            && p.lops.TenLop.Contains(TenLop)
+            && p.lops.Khoa.TenKhoa.Contains(TenKhoa)
+            && p.lops.ChuNhiem.TenGiaoVien.Contains(GVCN))).Select(p => p).Distinct();
+            foreach (var i in s)
+            {
+                SinhVien sv = new SinhVien();
+                sv.MaSinhVien = i.MaSinhVien;
+                sv.TenSinhVien = i.TenSinhVien;
+                sv.GioiTinh = i.GioiTinh;
+                sv.NgaySinh = i.NgaySinh;
+                sv.QueQuan = i.QueQuan;
+                sv.MaLop = i.MaLop;
+                sv.TotNghiep = i.TotNghiep;
+                sv.NienKhoa = i.NienKhoa;
+                list.Add(sv);
+            }*/
+            return list;   
         }
         public bool Add_SV_DAL(SinhVien sv)
         {

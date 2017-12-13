@@ -30,7 +30,8 @@ namespace Project_Team
             BLL = new Manager_BLL();
             load_cB_Add();
             load_cB_Search();
-            //dataGridView1.DataSource = BLL.Get_ListSV_BLL();
+            btEditDiem.Enabled = false;
+            btEditThongTin.Enabled = false;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -127,6 +128,15 @@ namespace Project_Team
                 dataGridView1.Rows[i].Cells[0].Value = i+1;
             }
         }
+        public void Set_null_dgv()
+        {
+            List<object> list = new List<object>(); 
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                list.Add("");
+            }
+            dataGridView1.DataSource = list;
+        }
         private void bTSearch_Click(object sender, EventArgs e)
         {
             string MaSinhVien = txtSearchMaSinhVien.Text.Trim();
@@ -135,8 +145,9 @@ namespace Project_Team
             string TenKhoa = cBSearchTenKhoa.SelectedIndex == -1 ? "" : cBSearchTenKhoa.SelectedItem.ToString();
             string GVCN = cBSearchGVCN.SelectedIndex == -1 ? "" : cBSearchGVCN.SelectedItem.ToString();
             string MonHoc = cBSearchTenMonHoc.SelectedIndex == -1 ? "@" : cBSearchTenMonHoc.SelectedItem.ToString();
-            dataGridView1.DataSource= BLL.Search_SV_BLL(MaSinhVien, TenSinhVien, TenLop,TenKhoa,GVCN,MonHoc);
-            SetSTT();
+            dataGridView1.DataSource = BLL.Search_SV_BLL(MaSinhVien, TenSinhVien, TenLop, TenKhoa, GVCN, MonHoc);
+            //dataGridView1.DataSource = null;
+            //SetSTT();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

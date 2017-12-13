@@ -79,7 +79,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabKhac = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -88,7 +87,7 @@
             this.pictureBox_Add_Khoa = new System.Windows.Forms.PictureBox();
             this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -108,13 +107,13 @@
             this.groupBox2.SuspendLayout();
             this.tabSearch.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabKhac.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Lop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Khoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_Main
@@ -410,13 +409,13 @@
             // tabSearch
             // 
             this.tabSearch.BackColor = System.Drawing.Color.White;
+            this.tabSearch.Controls.Add(this.dataGridView1);
             this.tabSearch.Controls.Add(this.btEditThongTin);
             this.tabSearch.Controls.Add(this.btEditDiem);
             this.tabSearch.Controls.Add(this.cBSearchNienKhoa);
             this.tabSearch.Controls.Add(this.label9);
             this.tabSearch.Controls.Add(this.groupBox4);
             this.tabSearch.Controls.Add(this.label2);
-            this.tabSearch.Controls.Add(this.dataGridView1);
             resources.ApplyResources(this.tabSearch, "tabSearch");
             this.tabSearch.Name = "tabSearch";
             // 
@@ -579,24 +578,6 @@
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.MaSinhVien,
-            this.TenSinhVien,
-            this.GioiTinh,
-            this.NgaySinh,
-            this.QueQuan,
-            this.TenLop,
-            this.TenKhoa,
-            this.TotNghiep});
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
             // tabKhac
             // 
             this.tabKhac.BackColor = System.Drawing.Color.White;
@@ -657,10 +638,21 @@
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             // 
-            // STT
+            // dataGridView1
             // 
-            resources.ApplyResources(this.STT, "STT");
-            this.STT.Name = "STT";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSinhVien,
+            this.TenSinhVien,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.QueQuan,
+            this.TenLop,
+            this.TenKhoa,
+            this.TotNghiep});
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
             // 
             // MaSinhVien
             // 
@@ -737,7 +729,6 @@
             this.tabSearch.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabKhac.ResumeLayout(false);
             this.tabKhac.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -746,6 +737,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Lop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Khoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -781,7 +773,6 @@
         private System.Windows.Forms.Label lbTieuDe;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -811,7 +802,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Excel;
         private System.Windows.Forms.RadioButton rBNu;
         private System.Windows.Forms.RadioButton rBNam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
         private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;

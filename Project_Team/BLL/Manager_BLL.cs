@@ -147,7 +147,7 @@ namespace Project_Team
         {
             return DAL.Get_SV_DAL(MaSinhVien);
         }
-        public List<object> Search_SV_BLL(string MaSinhVien, string TenSinhVien, string TenLop, string TenKhoa, string GVCN, string MonHoc)
+        public List<SinhVien> Search_SV_BLL(string MaSinhVien, string TenSinhVien, string TenLop, string TenKhoa, string GVCN, string MonHoc)
         {
             return DAL.Search_SV_DAL(MaSinhVien, TenSinhVien, TenLop, TenKhoa,GVCN,MonHoc);
         }
