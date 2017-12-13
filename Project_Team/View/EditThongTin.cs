@@ -41,6 +41,7 @@ namespace Project_Team
             SinhVien sv = MainForm.BLL.Get_SV_BLL(MaSinhVien);
             txtTenSinhVien.Text = sv.TenSinhVien;
             cBQueQuan.SelectedIndex = cBQueQuan.FindStringExact(sv.QueQuan);
+            //cBQueQuan.SelectedIndex = 1;
             dTNgaySinh.Value = sv.NgaySinh;
             if (sv.GioiTinh) rBNam.Checked = true; else rBNu.Checked = true;
             cbTenKhoa.SelectedIndex = cbTenKhoa.FindStringExact(sv.lops.Khoa.TenKhoa);
@@ -50,16 +51,23 @@ namespace Project_Team
         }
         private void btOk_Click(object sender, EventArgs e)
         {
-            SinhVien sv = new SinhVien();
-            sv.MaSinhVien = MaSinhVien;
-            sv.TenSinhVien = txtTenSinhVien.Text.Trim();
-            sv.NgaySinh = dTNgaySinh.Value;
-            sv.QueQuan = cBQueQuan.SelectedItem.ToString();
-            sv.GioiTinh = rBNam.Checked;
-            sv.NienKhoa = Int32.Parse(cbNienKhoa.SelectedItem.ToString());
-            sv.MaLop = MainForm.BLL.Get_MaLop_BLL(cbTenLop.SelectedItem.ToString());
-            sv.TotNghiep = rBDaTN.Checked;
-            MainForm.BLL.Edit_ThongTin_BLL(sv);
+            if (ThieuThongTin())
+            {
+                MessageBox.Show("Thiếu thông tin");
+            }
+            else
+            {
+                SinhVien sv = new SinhVien();
+                sv.MaSinhVien = MaSinhVien;
+                sv.TenSinhVien = txtTenSinhVien.Text.Trim();
+                sv.NgaySinh = dTNgaySinh.Value;
+                sv.QueQuan = cBQueQuan.SelectedItem.ToString();
+                sv.GioiTinh = rBNam.Checked;
+                sv.NienKhoa = Int32.Parse(cbNienKhoa.SelectedItem.ToString());
+                sv.MaLop = MainForm.BLL.Get_MaLop_BLL(cbTenLop.SelectedItem.ToString());
+                sv.TotNghiep = rBDaTN.Checked;
+                MainForm.BLL.Edit_ThongTin_BLL(sv);
+            }
         }
 
         private void btReset_Click(object sender, EventArgs e)
@@ -71,7 +79,14 @@ namespace Project_Team
         {
             Close();
         }
+        private bool ThieuThongTin()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaSinhVien.Text) || string.IsNullOrWhiteSpace(txtTenSinhVien.Text) || string.IsNullOrWhiteSpace(cbNienKhoa.Text))
+            {
+                return true;
+            }
+            else return false;
+        }
 
-        
     }
 }

@@ -30,12 +30,13 @@ namespace Project_Team
         }
         public void setThongTin(int ms)
         {
-            txtMaSinhVien.Text = ""+ms;
+            txtMaSinhVien.Text = "" + ms;
             txtTenSinhVien.Text = MainForm.BLL.Get_SV_BLL(ms).TenSinhVien;
         }
         public void loadMaMonHoc()
         {
             cBMaMonHoc.DataSource = MainForm.BLL.Get_ListMaMonHoc_BLL(MaSinhVien);
+            if (cBMaMonHoc.SelectedIndex == -1) btOk.Enabled = false;
         }
         private void cBMaMonHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,18 +46,20 @@ namespace Project_Team
         {
             string MaMonHoc = cBMaMonHoc.SelectedItem.ToString();
             KetQua kq = MainForm.BLL.Get_MotKetQua_BLL(MaMonHoc, MaSinhVien);
-            tBDiemCC.Text = kq.DiemBaiTap.ToString();
-            tBDiemGK.Text = kq.DiemGiuaKi.ToString();
-            tBDiemCK.Text = kq.DiemCuoiKi.ToString();
+            // Chuyển từ double sang decimal vì value ở dạng decimal
+            numbChuyenCan.Value = Convert.ToDecimal(kq.DiemBaiTap);
+            numbGiuaKi.Value = Convert.ToDecimal(kq.DiemGiuaKi);
+            numbCuoiKi.Value = Convert.ToDecimal(kq.DiemCuoiKi);
         }
         private void btOk_Click(object sender, EventArgs e)
         {
             KetQua kq = new KetQua();
-            kq.MaSinhVien = 1;
+            kq.MaSinhVien = Int32.Parse(txtMaSinhVien.Text);
             kq.MaMonHoc = cBMaMonHoc.SelectedItem.ToString();
-            kq.DiemBaiTap = Double.Parse(tBDiemCC.Text);
-            kq.DiemGiuaKi = Double.Parse(tBDiemGK.Text);
-            kq.DiemCuoiKi = Double.Parse(tBDiemCK.Text);
+            // Value ở dạng decimal nên chuyển sang double
+            kq.DiemBaiTap = Convert.ToDouble(numbChuyenCan.Value);
+            kq.DiemGiuaKi = Convert.ToDouble(numbGiuaKi.Value);
+            kq.DiemCuoiKi = Convert.ToDouble(numbCuoiKi.Value);
             MainForm.BLL.Edit_Diem_BLL(kq);
         }
 
@@ -69,6 +72,6 @@ namespace Project_Team
         {
             Close();
         }
- 
+
     }
 }

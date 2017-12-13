@@ -33,9 +33,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cBMaMonHoc = new System.Windows.Forms.ComboBox();
-            this.tBDiemCC = new System.Windows.Forms.TextBox();
-            this.tBDiemGK = new System.Windows.Forms.TextBox();
-            this.tBDiemCK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenSinhVien = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btOk = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -43,6 +40,12 @@
             this.btReset = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtMaSinhVien = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label1 = new System.Windows.Forms.Label();
+            this.numbCuoiKi = new System.Windows.Forms.NumericUpDown();
+            this.numbGiuaKi = new System.Windows.Forms.NumericUpDown();
+            this.numbChuyenCan = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numbCuoiKi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbGiuaKi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbChuyenCan)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -96,27 +99,6 @@
             this.cBMaMonHoc.Size = new System.Drawing.Size(217, 28);
             this.cBMaMonHoc.TabIndex = 7;
             this.cBMaMonHoc.SelectedIndexChanged += new System.EventHandler(this.cBMaMonHoc_SelectedIndexChanged);
-            // 
-            // tBDiemCC
-            // 
-            this.tBDiemCC.Location = new System.Drawing.Point(81, 283);
-            this.tBDiemCC.Name = "tBDiemCC";
-            this.tBDiemCC.Size = new System.Drawing.Size(100, 26);
-            this.tBDiemCC.TabIndex = 8;
-            // 
-            // tBDiemGK
-            // 
-            this.tBDiemGK.Location = new System.Drawing.Point(240, 283);
-            this.tBDiemGK.Name = "tBDiemGK";
-            this.tBDiemGK.Size = new System.Drawing.Size(100, 26);
-            this.tBDiemGK.TabIndex = 9;
-            // 
-            // tBDiemCK
-            // 
-            this.tBDiemCK.Location = new System.Drawing.Point(401, 283);
-            this.tBDiemCK.Name = "tBDiemCK";
-            this.tBDiemCK.Size = new System.Drawing.Size(100, 26);
-            this.tBDiemCK.TabIndex = 10;
             // 
             // label2
             // 
@@ -210,11 +192,71 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Mã sinh viên";
             // 
+            // numbCuoiKi
+            // 
+            this.numbCuoiKi.DecimalPlaces = 1;
+            this.numbCuoiKi.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numbCuoiKi.Location = new System.Drawing.Point(402, 284);
+            this.numbCuoiKi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numbCuoiKi.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numbCuoiKi.Name = "numbCuoiKi";
+            this.numbCuoiKi.Size = new System.Drawing.Size(99, 26);
+            this.numbCuoiKi.TabIndex = 24;
+            // 
+            // numbGiuaKi
+            // 
+            this.numbGiuaKi.DecimalPlaces = 1;
+            this.numbGiuaKi.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numbGiuaKi.Location = new System.Drawing.Point(240, 284);
+            this.numbGiuaKi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numbGiuaKi.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numbGiuaKi.Name = "numbGiuaKi";
+            this.numbGiuaKi.Size = new System.Drawing.Size(106, 26);
+            this.numbGiuaKi.TabIndex = 23;
+            // 
+            // numbChuyenCan
+            // 
+            this.numbChuyenCan.DecimalPlaces = 1;
+            this.numbChuyenCan.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numbChuyenCan.Location = new System.Drawing.Point(81, 284);
+            this.numbChuyenCan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numbChuyenCan.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numbChuyenCan.Name = "numbChuyenCan";
+            this.numbChuyenCan.Size = new System.Drawing.Size(102, 26);
+            this.numbChuyenCan.TabIndex = 22;
+            // 
             // EditDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 436);
+            this.Controls.Add(this.numbCuoiKi);
+            this.Controls.Add(this.numbGiuaKi);
+            this.Controls.Add(this.numbChuyenCan);
             this.Controls.Add(this.txtMaSinhVien);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btReset);
@@ -222,9 +264,6 @@
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.txtTenSinhVien);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tBDiemCK);
-            this.Controls.Add(this.tBDiemGK);
-            this.Controls.Add(this.tBDiemCC);
             this.Controls.Add(this.cBMaMonHoc);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -232,6 +271,9 @@
             this.Controls.Add(this.label3);
             this.Name = "EditDiem";
             this.Text = "Chỉnh sửa điểm";
+            ((System.ComponentModel.ISupportInitialize)(this.numbCuoiKi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbGiuaKi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbChuyenCan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,9 +285,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cBMaMonHoc;
-        private System.Windows.Forms.TextBox tBDiemCC;
-        private System.Windows.Forms.TextBox tBDiemGK;
-        private System.Windows.Forms.TextBox tBDiemCK;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTenSinhVien;
         private MaterialSkin.Controls.MaterialRaisedButton btOk;
@@ -253,5 +292,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btReset;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtMaSinhVien;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numbCuoiKi;
+        private System.Windows.Forms.NumericUpDown numbGiuaKi;
+        private System.Windows.Forms.NumericUpDown numbChuyenCan;
     }
 }

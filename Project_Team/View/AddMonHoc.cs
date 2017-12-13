@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using MaterialSkin;
 namespace Project_Team
 {
-    public partial class AddKhoa : MaterialSkin.Controls.MaterialForm
+    public partial class AddMonHoc : MaterialSkin.Controls.MaterialForm
     {
-        public AddKhoa()
+        public AddMonHoc()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -24,10 +24,15 @@ namespace Project_Team
                 TextShade.WHITE);
         }
 
-        public void text_Clear()
+        private void btClear_Click(object sender, EventArgs e)
         {
-            txtMaKhoa.Text = "";
-            txtTenKhoa.Text = "";
+            txtMaMonHoc.Clear();
+            txtTenMonHoc.Clear();
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btOk_Click(object sender, EventArgs e)
@@ -38,31 +43,27 @@ namespace Project_Team
             }
             else
             {
-                Khoa khoaMoi = new Khoa();
-                khoaMoi.MaKhoa = txtMaKhoa.Text;
-                khoaMoi.TenKhoa = txtTenKhoa.Text;
-                if (MainForm.BLL.Add_Khoa_BLL(khoaMoi) == false) MessageBox.Show("Đã có khoa này");
-                else MessageBox.Show("Thêm khoa thành công");
-                text_Clear();
+                MonHoc monHoc = new MonHoc
+                {
+                    MaMonHoc = txtMaMonHoc.Text,
+                    TenMonHoc = txtTenMonHoc.Text,
+                    TinChi = Convert.ToInt32(numbTinChi.Value)
+                };
+                if (MainForm.BLL.Add_MonHoc_BLL(monHoc))
+                {
+                    MessageBox.Show("Thêm môn học thành công");
+                }
+                else MessageBox.Show("Đã có môn học này");
             }
-        }
-
-        private void btClear_Click(object sender, EventArgs e)
-        {
-            text_Clear();
-        }
-
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private bool ThieuThongTin()
         {
-            if (string.IsNullOrWhiteSpace(txtMaKhoa.Text) || string.IsNullOrWhiteSpace(txtTenKhoa.Text))
+            if (string.IsNullOrWhiteSpace(txtMaMonHoc.Text) || string.IsNullOrWhiteSpace(txtTenMonHoc.Text))
             {
                 return true;
             }
+
             else return false;
         }
     }

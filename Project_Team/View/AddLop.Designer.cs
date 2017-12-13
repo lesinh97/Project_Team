@@ -46,14 +46,15 @@
             this.txtTenLop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtTenLop.Depth = 0;
             this.txtTenLop.Hint = "";
-            this.txtTenLop.Location = new System.Drawing.Point(166, 171);
+            this.txtTenLop.Location = new System.Drawing.Point(111, 111);
+            this.txtTenLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenLop.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.PasswordChar = '\0';
             this.txtTenLop.SelectedText = "";
             this.txtTenLop.SelectionLength = 0;
             this.txtTenLop.SelectionStart = 0;
-            this.txtTenLop.Size = new System.Drawing.Size(271, 32);
+            this.txtTenLop.Size = new System.Drawing.Size(181, 23);
             this.txtTenLop.TabIndex = 10;
             this.txtTenLop.UseSystemPasswordChar = false;
             // 
@@ -62,14 +63,15 @@
             this.txtMaLop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtMaLop.Depth = 0;
             this.txtMaLop.Hint = "";
-            this.txtMaLop.Location = new System.Drawing.Point(166, 110);
+            this.txtMaLop.Location = new System.Drawing.Point(111, 71);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaLop.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.PasswordChar = '\0';
             this.txtMaLop.SelectedText = "";
             this.txtMaLop.SelectionLength = 0;
             this.txtMaLop.SelectionStart = 0;
-            this.txtMaLop.Size = new System.Drawing.Size(271, 32);
+            this.txtMaLop.Size = new System.Drawing.Size(181, 23);
             this.txtMaLop.TabIndex = 9;
             this.txtMaLop.UseSystemPasswordChar = false;
             // 
@@ -77,9 +79,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(66, 183);
+            this.label3.Location = new System.Drawing.Point(44, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Tên Lớp";
             // 
@@ -87,9 +90,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(66, 122);
+            this.label2.Location = new System.Drawing.Point(44, 79);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Mã Lớp";
             // 
@@ -97,9 +101,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(65, 289);
+            this.label1.Location = new System.Drawing.Point(43, 188);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Mã GVCN";
             // 
@@ -107,9 +112,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(66, 235);
+            this.label4.Location = new System.Drawing.Point(44, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Mã Khoa";
             // 
@@ -119,9 +125,10 @@
             this.cBMaKhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cBMaKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBMaKhoa.FormattingEnabled = true;
-            this.cBMaKhoa.Location = new System.Drawing.Point(166, 235);
+            this.cBMaKhoa.Location = new System.Drawing.Point(111, 153);
+            this.cBMaKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBMaKhoa.Name = "cBMaKhoa";
-            this.cBMaKhoa.Size = new System.Drawing.Size(271, 28);
+            this.cBMaKhoa.Size = new System.Drawing.Size(182, 21);
             this.cBMaKhoa.TabIndex = 15;
             // 
             // cBMaGV
@@ -130,20 +137,22 @@
             this.cBMaGV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cBMaGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBMaGV.FormattingEnabled = true;
-            this.cBMaGV.Location = new System.Drawing.Point(166, 281);
+            this.cBMaGV.Location = new System.Drawing.Point(111, 183);
+            this.cBMaGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBMaGV.Name = "cBMaGV";
-            this.cBMaGV.Size = new System.Drawing.Size(271, 28);
+            this.cBMaGV.Size = new System.Drawing.Size(182, 21);
             this.cBMaGV.TabIndex = 16;
             // 
             // btClear
             // 
             this.btClear.BackColor = System.Drawing.SystemColors.Control;
             this.btClear.Depth = 0;
-            this.btClear.Location = new System.Drawing.Point(254, 344);
+            this.btClear.Location = new System.Drawing.Point(169, 224);
+            this.btClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btClear.Name = "btClear";
             this.btClear.Primary = true;
-            this.btClear.Size = new System.Drawing.Size(94, 56);
+            this.btClear.Size = new System.Drawing.Size(63, 36);
             this.btClear.TabIndex = 20;
             this.btClear.Text = "Clear";
             this.btClear.UseVisualStyleBackColor = false;
@@ -152,11 +161,12 @@
             // btThoat
             // 
             this.btThoat.Depth = 0;
-            this.btThoat.Location = new System.Drawing.Point(388, 344);
+            this.btThoat.Location = new System.Drawing.Point(259, 224);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btThoat.MouseState = MaterialSkin.MouseState.HOVER;
             this.btThoat.Name = "btThoat";
             this.btThoat.Primary = true;
-            this.btThoat.Size = new System.Drawing.Size(94, 56);
+            this.btThoat.Size = new System.Drawing.Size(63, 36);
             this.btThoat.TabIndex = 21;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
@@ -165,11 +175,12 @@
             // btOk
             // 
             this.btOk.Depth = 0;
-            this.btOk.Location = new System.Drawing.Point(62, 344);
+            this.btOk.Location = new System.Drawing.Point(41, 224);
+            this.btOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btOk.MouseState = MaterialSkin.MouseState.HOVER;
             this.btOk.Name = "btOk";
             this.btOk.Primary = true;
-            this.btOk.Size = new System.Drawing.Size(136, 56);
+            this.btOk.Size = new System.Drawing.Size(91, 36);
             this.btOk.TabIndex = 19;
             this.btOk.Text = "Đồng ý";
             this.btOk.UseVisualStyleBackColor = true;
@@ -177,9 +188,9 @@
             // 
             // AddLop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 424);
+            this.ClientSize = new System.Drawing.Size(366, 276);
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.btOk);
@@ -191,6 +202,7 @@
             this.Controls.Add(this.txtMaLop);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddLop";
             this.Text = "Thêm Lớp";
             this.ResumeLayout(false);

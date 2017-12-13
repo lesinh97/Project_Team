@@ -22,6 +22,12 @@ namespace Project_Team
                 Primary.Blue400, Primary.Blue500,
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
+            LoadMaKhoa();
+            
+        }
+        private void LoadMaKhoa()
+        {
+            cbMaKhoa.DataSource = MainForm.BLL.Get_ListMaKhoa_BLL();
         }
         public void text_Clear()
         {
@@ -31,12 +37,19 @@ namespace Project_Team
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            ChuNhiem giaoVien = new ChuNhiem();
-            giaoVien.MaGiaoVien = txtMaGiaoVien.Text;
-            giaoVien.TenGiaoVien = txtTenGiaoVien.Text;
-            if (MainForm.BLL.Add_GiaoVien_BLL(giaoVien)) MessageBox.Show("Thêm giáo viên thành công");
-            else MessageBox.Show("Đã có giáo viên này");
-            text_Clear();
+            if (ThieuThongTin())
+            {
+                MessageBox.Show("Thiếu thông tin");
+            }
+            else
+            {
+                ChuNhiem giaoVien = new ChuNhiem();
+                giaoVien.MaGiaoVien = txtGV.Text + cbMaKhoa.Text + "_" + txtMaGiaoVien.Text;
+                giaoVien.TenGiaoVien = txtTenGiaoVien.Text;
+                if (MainForm.BLL.Add_GiaoVien_BLL(giaoVien)) MessageBox.Show("Thêm giáo viên thành công");
+                else MessageBox.Show("Đã có giáo viên này");
+                text_Clear();
+            }
         }
 
         private void btClear_Click(object sender, EventArgs e)
@@ -48,6 +61,14 @@ namespace Project_Team
         {
             Close();
         }
- 
+        
+        private bool ThieuThongTin()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaGiaoVien.Text) || string.IsNullOrWhiteSpace(txtTenGiaoVien.Text))
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

@@ -43,15 +43,21 @@ namespace Project_Team
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            Lop lopMoi = new Lop();
-            lopMoi.MaLop = txtMaLop.Text;
-            lopMoi.TenLop = txtTenLop.Text;
-            lopMoi.MaKhoa = cBMaKhoa.SelectedItem.ToString();
-            lopMoi.MaGiaoVien = cBMaGV.SelectedItem.ToString();
-            if (MainForm.BLL.Add_Lop_BLL(lopMoi)) MessageBox.Show("Thêm lớp thành công");
-            else MessageBox.Show("Đã có lớp này");
-            text_Clear();
-
+            if (ThieuThongTin())
+            {
+                MessageBox.Show("Thiếu thông tin");
+            }
+            else
+            {
+                Lop lopMoi = new Lop();
+                lopMoi.MaLop = "L_" + cBMaKhoa + "_" + txtMaLop.Text;
+                lopMoi.TenLop = txtTenLop.Text;
+                lopMoi.MaKhoa = cBMaKhoa.SelectedItem.ToString();
+                lopMoi.MaGiaoVien = cBMaGV.SelectedItem.ToString();
+                if (MainForm.BLL.Add_Lop_BLL(lopMoi)) MessageBox.Show("Thêm lớp thành công");
+                else MessageBox.Show("Đã có lớp này");
+                text_Clear();
+            }
         }
 
         private void btClear_Click(object sender, EventArgs e)
@@ -62,6 +68,14 @@ namespace Project_Team
         private void btThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private bool ThieuThongTin()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaLop.Text) || string.IsNullOrWhiteSpace(txtTenLop.Text))
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

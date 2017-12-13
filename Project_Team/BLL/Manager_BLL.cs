@@ -139,7 +139,7 @@ namespace Project_Team
             return DAL.Get_ListMaKhoa_DAL();
         }
         //Trong code thu
-        public List<object> Get_ListSV_BLL()
+        public List<SinhVien> Get_ListSV_BLL()
         {
             return DAL.Get_ListSV_DAL();
         }

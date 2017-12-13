@@ -230,7 +230,7 @@
             "Đà Nẵng",
             "Đắk Lắk",
             "Đắk Nông",
-            "Điện Biên ",
+            "Điện Biên",
             "Đồng Nai",
             "Đồng Tháp",
             "Gia Lai",
@@ -259,7 +259,7 @@
             "Phú Thọ",
             "Phú Yên",
             "Quảng Bình",
-            "Quảng Nam ",
+            "Quảng Nam",
             "Quảng Ngãi",
             "Quảng Ninh",
             "Quảng Trị",
@@ -307,6 +307,7 @@
             // txtMaSinhVien
             // 
             this.txtMaSinhVien.Depth = 0;
+            this.txtMaSinhVien.Enabled = false;
             this.txtMaSinhVien.Hint = "";
             this.txtMaSinhVien.Location = new System.Drawing.Point(143, 41);
             this.txtMaSinhVien.MouseState = MaterialSkin.MouseState.HOVER;

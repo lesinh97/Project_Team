@@ -100,7 +100,11 @@ namespace Project_Team
             AddKhoa f = new AddKhoa();
             f.Show();
         }
-        
+        private void pictureBox_Add_MonHoc_Click(object sender, EventArgs e)
+        {
+            AddMonHoc f = new AddMonHoc();
+            f.Show();
+        }
         public void load_cB_Add()
         {
             cBQueQuan.SelectedIndex = 14;
@@ -139,21 +143,35 @@ namespace Project_Team
         }
         private void bTSearch_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             string MaSinhVien = txtSearchMaSinhVien.Text.Trim();
             string TenSinhVien = txtSearchTenSinhVien.Text.Trim();
             string TenLop = cBSearchTenLop.SelectedIndex == -1 ? "" : cBSearchTenLop.SelectedItem.ToString();
             string TenKhoa = cBSearchTenKhoa.SelectedIndex == -1 ? "" : cBSearchTenKhoa.SelectedItem.ToString();
             string GVCN = cBSearchGVCN.SelectedIndex == -1 ? "" : cBSearchGVCN.SelectedItem.ToString();
             string MonHoc = cBSearchTenMonHoc.SelectedIndex == -1 ? "@" : cBSearchTenMonHoc.SelectedItem.ToString();
-            dataGridView1.DataSource = BLL.Search_SV_BLL(MaSinhVien, TenSinhVien, TenLop, TenKhoa, GVCN, MonHoc);
-            //dataGridView1.DataSource = null;
-            //SetSTT();
+            List<SinhVien> list = BLL.Search_SV_BLL(MaSinhVien, TenSinhVien, TenLop, TenKhoa, GVCN, MonHoc);
+            for (int i = 0; i < list.Count; i++)
+            {
+                dataGridView1.Rows.Add(
+                list[i].MaSinhVien,
+                list[i].TenSinhVien,
+                list[i].GioiTinh,
+                list[i].NgaySinh,
+                list[i].QueQuan,
+                list[i].lops.TenLop,
+                list[i].lops.Khoa.TenKhoa,
+                list[i].TotNghiep);
+            }
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            MaSinhVien_Edit = Int32.Parse(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
-            //TenSinhVien_Edit = 
+            btEditDiem.Enabled = false;
+            btEditThongTin.Enabled = false;
+            MaSinhVien_Edit = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            if(BLL.Get_ListMaMonHoc_BLL(MaSinhVien_Edit).Any()) btEditDiem.Enabled = true;
+            if(dataGridView1.SelectedRows.Count!=0) btEditThongTin.Enabled = true;
             MessageBox.Show("" + MaSinhVien_Edit);
         }
         public void clear_tab_Add()
@@ -166,19 +184,26 @@ namespace Project_Team
         }
         private void btAdd_Click(object sender, EventArgs e)
         {
-            SinhVien sv = new SinhVien();
-            sv.MaSinhVien = Int32.Parse(txtMaSinhVien.Text);
-            sv.TenSinhVien = txtTenSinhVien.Text.Trim();
-            sv.NgaySinh = dTNgaySinh.Value;
-            sv.QueQuan = cBQueQuan.SelectedItem.ToString();
-            sv.GioiTinh = rBNam.Checked;
-            sv.NienKhoa = Int32.Parse(cBNienKhoa.Text);
-            sv.MaLop = BLL.Get_MaLop_BLL(cBTenLop.SelectedItem.ToString());
-            sv.TotNghiep = false;
-            if (BLL.Add_SV_BLL(sv)) MessageBox.Show("Đã thêm thành công");
-            else MessageBox.Show("Sinh viên đã tồn tại");
-            clear_tab_Add();
-            load_cB_Add();
+            if (ThieuThongTin())
+            {
+                MessageBox.Show("Thiếu thông tin");
+            }
+            else
+            {
+                SinhVien sv = new SinhVien();
+                sv.MaSinhVien = Int32.Parse(txtMaSinhVien.Text);
+                sv.TenSinhVien = txtTenSinhVien.Text.Trim();
+                sv.NgaySinh = dTNgaySinh.Value;
+                sv.QueQuan = cBQueQuan.SelectedItem.ToString();
+                sv.GioiTinh = rBNam.Checked;
+                sv.NienKhoa = Int32.Parse(cBNienKhoa.Text);
+                sv.MaLop = BLL.Get_MaLop_BLL(cBTenLop.SelectedItem.ToString());
+                sv.TotNghiep = false;
+                if (BLL.Add_SV_BLL(sv)) MessageBox.Show("Đã thêm thành công");
+                else MessageBox.Show("Sinh viên đã tồn tại");
+                clear_tab_Add();
+                load_cB_Add();
+            }
         }
 
         private void pictureBox_Excel_Click(object sender, EventArgs e)
@@ -193,5 +218,15 @@ namespace Project_Team
             txtSearchMaSinhVien.Clear();
             txtSearchTenSinhVien.Clear();
         }
+        private bool ThieuThongTin()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaSinhVien.Text) || string.IsNullOrWhiteSpace(txtTenSinhVien.Text) || string.IsNullOrWhiteSpace(cBNienKhoa.Text))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+       
     }
 }

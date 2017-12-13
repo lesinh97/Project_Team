@@ -96,6 +96,12 @@
     <Compile Include="View\AddLop.Designer.cs">
       <DependentUpon>AddLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AddMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddMonHoc.Designer.cs">
+      <DependentUpon>AddMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EditDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddLop.resx">
       <DependentUpon>AddLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddMonHoc.resx">
+      <DependentUpon>AddMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EditDiem.resx">
       <DependentUpon>EditDiem.cs</DependentUpon>
