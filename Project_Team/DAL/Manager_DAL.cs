@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Project_Team
 {
@@ -42,7 +43,6 @@ namespace Project_Team
             var s = db.MonHocs.Where(p => p.MaMonHoc.Equals(monHoc.MaMonHoc)).Select(p => p);
             if(s.Any())
             {
-                MessageBox.Show("Đã có môn học này trong hệ thống");
                 return false;
             }
             else
@@ -185,6 +185,7 @@ namespace Project_Team
 
         public void TinhDTB_1Mon1SinhVien_DAL(string MaMonHoc, int MaSinhVien)
         {
+            
             KetQua s = db.KetQuas.Single(p => p.MaMonHoc.Equals(MaMonHoc.Trim()) && p.MaSinhVien == MaSinhVien);
             s.DiemTrungBinh = s.DiemBaiTap * 0.2 + s.DiemGiuaKi * 0.2 + s.DiemCuoiKi * 0.6;
             s.DiemChu = TinhDiemChu(s.DiemTrungBinh);
@@ -194,18 +195,32 @@ namespace Project_Team
         public void TinhDTB_MotMon_DAL(string MaMonHoc)
         {
             List<KetQua> s = db.KetQuas.Where(p => p.MaMonHoc == MaMonHoc).Select(p => p).ToList<KetQua>();
-            foreach (KetQua item in s)
+            if (s.Any())
             {
-                TinhDTB_1Mon1SinhVien_DAL(MaMonHoc, item.MaSinhVien);
+                foreach (KetQua item in s)
+                {
+                    TinhDTB_1Mon1SinhVien_DAL(MaMonHoc, item.MaSinhVien);
+                }
+            }
+            else
+            {
+                // ko lam gi
             }
         }
 
         public void TinhDTB_TatCacMon_DAL()
         {
             List<MonHoc> s = db.MonHocs.Select(p => p).ToList<MonHoc>();
-            foreach (var item in s)
+            if (s.Any())
             {
-                TinhDTB_MotMon_DAL(item.MaMonHoc);
+                foreach (var item in s)
+                {
+                    TinhDTB_MotMon_DAL(item.MaMonHoc);
+                }
+            }
+            else
+            {
+                // ko lam gi
             }
         }
 
@@ -221,22 +236,37 @@ namespace Project_Team
                     p.DiemTrungBinh,
                     k.TinChi
                 }).ToList();
-            foreach (var item in s)
+            if (s.Any())
             {
-                diemTichLuy = diemTichLuy + TinhDiem4(item.DiemTrungBinh) * item.TinChi;
-                tongTinChi += item.TinChi;
+                foreach (var item in s)
+                {
+                    diemTichLuy = diemTichLuy + TinhDiem4(item.DiemTrungBinh) * item.TinChi;
+                    tongTinChi += item.TinChi;
+                }
+                SinhVien sinhVien = db.SinhViens.Single(p => p.MaSinhVien == MaSinhVien);
+                sinhVien.DiemTrungBinh = Math.Round(diemTichLuy / tongTinChi, 2);
+                db.SaveChanges();
             }
-            SinhVien sinhVien = db.SinhViens.Single(p => p.MaSinhVien == MaSinhVien);
-            sinhVien.DiemTrungBinh = diemTichLuy / tongTinChi;
-            db.SaveChanges();
+            else
+            {
+                // ko lam gi
+            }
         }
 
         public void TinhDTL_TatCaSinhVien_DAL()
         {
+            TinhDTB_TatCacMon_DAL();
             var s = db.SinhViens.Select(p => p.MaSinhVien).ToList();
-            foreach (var item in s)
+            if (s.Any())
             {
-                TinhDTL_MotSinhVien_DAL(item);
+                foreach (var item in s)
+                {
+                    TinhDTL_MotSinhVien_DAL(item);
+                }
+            }
+            else
+            {
+                // ko lam gi
             }
         }
         private double DiemThang4(string DiemChu)
@@ -477,6 +507,56 @@ namespace Project_Team
         {
            var s = db.Lops.Where(p => p.TenLop == tenLop).Single();
             return s.MaLop;
+        }
+        public bool Check_SV_DAL(int MaSv)
+        {
+            var s = db.SinhViens.Where(p => p.MaSinhVien == MaSv).Select(p => p);
+            if (s.Any())
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        public bool Check_MH_DAL(string MaMh)
+        {
+            var s = db.MonHocs.Where(p => p.MaMonHoc == MaMh).Select(p => p);
+            if (s.Any())
+            {
+                return false;
+            }
+            else return true;
+        }
+        public void ReadExcel_DAL(string path)
+        {
+            string filename = path;
+            Excel.Application ExcelApp = new Excel.Application();
+            ExcelApp.Workbooks.Open(filename);
+            foreach (Excel.Worksheet ws in ExcelApp.Worksheets)
+            {
+                int i = 2;
+                while (ws.Range["B" + i].Value != null)
+                {
+                    string tmpMmh = ws.Range["A" + 2].Value.ToString();
+                    int tmpMsv = int.Parse(ws.Range["B" + i].Value.ToString());
+                    if (Check_SV_DAL(tmpMsv) == false && Check_MH_DAL(tmpMmh) == false)
+                    {
+                        KetQua kq = new KetQua();
+                        kq.MaMonHoc = ws.Range["A" + 2].Value.ToString();
+                        kq.MaSinhVien = int.Parse(ws.Range["B" + i].Value.ToString());
+                        kq.DiemBaiTap = double.Parse(ws.Range["C" + i].Value.ToString());
+                        kq.DiemGiuaKi = double.Parse(ws.Range["D" + i].Value.ToString());
+                        kq.DiemCuoiKi = double.Parse(ws.Range["E" + i].Value.ToString());
+                        db.KetQuas.Add(kq);
+                        db.SaveChanges();
+                        i++;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+            }
         }
     }
 }

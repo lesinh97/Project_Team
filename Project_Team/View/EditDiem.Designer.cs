@@ -114,6 +114,7 @@
             // 
             this.txtTenSinhVien.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtTenSinhVien.Depth = 0;
+            this.txtTenSinhVien.Enabled = false;
             this.txtTenSinhVien.Hint = "";
             this.txtTenSinhVien.Location = new System.Drawing.Point(197, 151);
             this.txtTenSinhVien.MouseState = MaterialSkin.MouseState.HOVER;
@@ -170,6 +171,7 @@
             // 
             this.txtMaSinhVien.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtMaSinhVien.Depth = 0;
+            this.txtMaSinhVien.Enabled = false;
             this.txtMaSinhVien.Hint = "";
             this.txtMaSinhVien.Location = new System.Drawing.Point(197, 100);
             this.txtMaSinhVien.MouseState = MaterialSkin.MouseState.HOVER;

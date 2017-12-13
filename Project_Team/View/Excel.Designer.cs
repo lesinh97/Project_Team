@@ -30,14 +30,13 @@
         {
             this.btPath = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btImport = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btPath
             // 
-            this.btPath.Location = new System.Drawing.Point(679, 35);
+            this.btPath.Location = new System.Drawing.Point(660, 68);
             this.btPath.Name = "btPath";
             this.btPath.Size = new System.Drawing.Size(104, 39);
             this.btPath.TabIndex = 0;
@@ -47,41 +46,42 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(61, 41);
+            this.txtPath.Location = new System.Drawing.Point(42, 74);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(584, 26);
             this.txtPath.TabIndex = 1;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(902, 282);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // btImport
             // 
-            this.btImport.Location = new System.Drawing.Point(826, 35);
+            this.btImport.Location = new System.Drawing.Point(807, 68);
             this.btImport.Name = "btImport";
             this.btImport.Size = new System.Drawing.Size(104, 39);
             this.btImport.TabIndex = 3;
             this.btImport.Text = "Import";
             this.btImport.UseVisualStyleBackColor = true;
+            this.btImport.Click += new System.EventHandler(this.btImport_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Chọn file điểm";
             // 
             // Excel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 425);
+            this.ClientSize = new System.Drawing.Size(948, 150);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btImport);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btPath);
             this.Name = "Excel";
             this.Text = "Excel";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,7 +91,7 @@
 
         private System.Windows.Forms.Button btPath;
         private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btImport;
+        private System.Windows.Forms.Label label1;
     }
 }

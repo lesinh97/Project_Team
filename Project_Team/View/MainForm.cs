@@ -161,6 +161,7 @@ namespace Project_Team
                 list[i].QueQuan,
                 list[i].lops.TenLop,
                 list[i].lops.Khoa.TenKhoa,
+                list[i].DiemTrungBinh,
                 list[i].TotNghiep);
             }
         }
@@ -172,7 +173,6 @@ namespace Project_Team
             MaSinhVien_Edit = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             if(BLL.Get_ListMaMonHoc_BLL(MaSinhVien_Edit).Any()) btEditDiem.Enabled = true;
             if(dataGridView1.SelectedRows.Count!=0) btEditThongTin.Enabled = true;
-            MessageBox.Show("" + MaSinhVien_Edit);
         }
         public void clear_tab_Add()
         {
@@ -227,6 +227,10 @@ namespace Project_Team
             else return false;
         }
 
-       
+        private void pictureBox_CNDiem_Click(object sender, EventArgs e)
+        {
+            BLL.TinhDTL_TatCaSinhVien_BLL();
+            MessageBox.Show("Cập nhật xong");
+        }
     }
 }

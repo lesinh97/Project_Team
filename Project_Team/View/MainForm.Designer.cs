@@ -63,14 +63,6 @@
             this.lbMSSV = new System.Windows.Forms.Label();
             this.tabSearch = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotNghiep = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btEditThongTin = new System.Windows.Forms.Button();
             this.btEditDiem = new System.Windows.Forms.Button();
             this.cBSearchNienKhoa = new System.Windows.Forms.ComboBox();
@@ -94,6 +86,8 @@
             this.tabKhac = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.pictureBox_CNDiem = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox_Excel = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -105,8 +99,15 @@
             this.pictureBox_Add_Lop = new System.Windows.Forms.PictureBox();
             this.pictureBox_Add_Khoa = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox_CNDiem = new System.Windows.Forms.PictureBox();
+            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotNghiep = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TabControl_Main.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -121,12 +122,12 @@
             this.groupBox4.SuspendLayout();
             this.tabKhac.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CNDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_MonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Lop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Khoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CNDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_Main
@@ -466,59 +467,12 @@
             this.QueQuan,
             this.TenLop,
             this.TenKhoa,
+            this.DiemTrungBinh,
             this.TotNghiep});
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
-            // MaSinhVien
-            // 
-            this.MaSinhVien.DataPropertyName = "MaSinhVien";
-            resources.ApplyResources(this.MaSinhVien, "MaSinhVien");
-            this.MaSinhVien.Name = "MaSinhVien";
-            // 
-            // TenSinhVien
-            // 
-            this.TenSinhVien.DataPropertyName = "TenSinhVien";
-            resources.ApplyResources(this.TenSinhVien, "TenSinhVien");
-            this.TenSinhVien.Name = "TenSinhVien";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            resources.ApplyResources(this.GioiTinh, "GioiTinh");
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            resources.ApplyResources(this.NgaySinh, "NgaySinh");
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // QueQuan
-            // 
-            this.QueQuan.DataPropertyName = "QueQuan";
-            resources.ApplyResources(this.QueQuan, "QueQuan");
-            this.QueQuan.Name = "QueQuan";
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            resources.ApplyResources(this.TenLop, "TenLop");
-            this.TenLop.Name = "TenLop";
-            // 
-            // TenKhoa
-            // 
-            this.TenKhoa.DataPropertyName = "TenKhoa";
-            resources.ApplyResources(this.TenKhoa, "TenKhoa");
-            this.TenKhoa.Name = "TenKhoa";
-            // 
-            // TotNghiep
-            // 
-            this.TotNghiep.DataPropertyName = "TotNghiep";
-            resources.ApplyResources(this.TotNghiep, "TotNghiep");
-            this.TotNghiep.Name = "TotNghiep";
             // 
             // btEditThongTin
             // 
@@ -710,6 +664,20 @@
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label19.Name = "label19";
+            // 
+            // pictureBox_CNDiem
+            // 
+            this.pictureBox_CNDiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureBox_CNDiem, "pictureBox_CNDiem");
+            this.pictureBox_CNDiem.Name = "pictureBox_CNDiem";
+            this.pictureBox_CNDiem.TabStop = false;
+            this.pictureBox_CNDiem.Click += new System.EventHandler(this.pictureBox_CNDiem_Click);
+            // 
             // label14
             // 
             resources.ApplyResources(this.label14, "label14");
@@ -721,6 +689,7 @@
             resources.ApplyResources(this.pictureBox_Excel, "pictureBox_Excel");
             this.pictureBox_Excel.Name = "pictureBox_Excel";
             this.pictureBox_Excel.TabStop = false;
+            this.pictureBox_Excel.Click += new System.EventHandler(this.pictureBox_Excel_Click);
             // 
             // label15
             // 
@@ -782,18 +751,59 @@
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             // 
-            // label19
+            // MaSinhVien
             // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Name = "label19";
+            this.MaSinhVien.DataPropertyName = "MaSinhVien";
+            resources.ApplyResources(this.MaSinhVien, "MaSinhVien");
+            this.MaSinhVien.Name = "MaSinhVien";
             // 
-            // pictureBox_CNDiem
+            // TenSinhVien
             // 
-            this.pictureBox_CNDiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pictureBox_CNDiem, "pictureBox_CNDiem");
-            this.pictureBox_CNDiem.Name = "pictureBox_CNDiem";
-            this.pictureBox_CNDiem.TabStop = false;
+            this.TenSinhVien.DataPropertyName = "TenSinhVien";
+            resources.ApplyResources(this.TenSinhVien, "TenSinhVien");
+            this.TenSinhVien.Name = "TenSinhVien";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            resources.ApplyResources(this.GioiTinh, "GioiTinh");
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            resources.ApplyResources(this.NgaySinh, "NgaySinh");
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // QueQuan
+            // 
+            this.QueQuan.DataPropertyName = "QueQuan";
+            resources.ApplyResources(this.QueQuan, "QueQuan");
+            this.QueQuan.Name = "QueQuan";
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            resources.ApplyResources(this.TenLop, "TenLop");
+            this.TenLop.Name = "TenLop";
+            // 
+            // TenKhoa
+            // 
+            this.TenKhoa.DataPropertyName = "TenKhoa";
+            resources.ApplyResources(this.TenKhoa, "TenKhoa");
+            this.TenKhoa.Name = "TenKhoa";
+            // 
+            // DiemTrungBinh
+            // 
+            this.DiemTrungBinh.DataPropertyName = "DiemTrungBinh";
+            resources.ApplyResources(this.DiemTrungBinh, "DiemTrungBinh");
+            this.DiemTrungBinh.Name = "DiemTrungBinh";
+            // 
+            // TotNghiep
+            // 
+            this.TotNghiep.DataPropertyName = "TotNghiep";
+            resources.ApplyResources(this.TotNghiep, "TotNghiep");
+            this.TotNghiep.Name = "TotNghiep";
             // 
             // MainForm
             // 
@@ -827,12 +837,12 @@
             this.tabKhac.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CNDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Excel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_MonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_GV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Lop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Add_Khoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CNDiem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -897,14 +907,6 @@
         private System.Windows.Forms.RadioButton rBNu;
         private System.Windows.Forms.RadioButton rBNam;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoa;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TotNghiep;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -917,5 +919,14 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox_CNDiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinh;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TotNghiep;
     }
 }

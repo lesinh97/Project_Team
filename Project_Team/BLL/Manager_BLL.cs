@@ -159,5 +159,13 @@ namespace Project_Team
         {
             return DAL.Get_MaLop_DAL(tenLop);
         }
+        public void ReadExcel_BLL(string path)
+        {
+            DAL.ReadExcel_DAL(path);
+        }
+        public void TinhDTL_TatCaSinhVien_BLL()
+        {
+            DAL.TinhDTL_TatCaSinhVien_DAL();
+        }
     }
 }
